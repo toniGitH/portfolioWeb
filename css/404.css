@@ -1,0 +1,178 @@
+
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+    font-family: "Fredoka";
+}
+
+#tituloPagina404{
+    font-size: 4vw;
+    text-align: center;
+    padding-top: 40px;
+}
+
+#imagenError{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#imagenError img{
+    vertical-align: top;
+    width: 100%;
+}
+
+#textoError{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+}
+
+#cajaError{
+    text-align: center;
+    width: 80%;
+}
+
+#cajaError h2{
+    font-size: 3vw;
+}
+
+#cajaError p{
+    font-size: 1.7vw;
+}
+
+.vaciaGrande{
+    height: 50vh;
+    display: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+    
+@media only screen and (max-width:960px){
+
+    #tituloPagina404{
+        font-size: 5vw;
+    }
+
+    #imagenError{
+        top: 60px;
+    }
+
+    #imagenError img{
+        width: 90%;
+    }
+
+    #textoError{
+        justify-content: flex-end;
+        margin-right: 15vw;
+    }
+
+    #cajaError{
+        width: 60%;     
+    }
+
+    #cajaError h2{
+        font-size: 4vw;
+    }
+    
+    #cajaError p{
+        font-size: 2.5vw;
+    }
+
+    .vacia{
+        display: none;
+    }
+    
+    .vaciaGrande{
+        display: block;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 790PX * * */
+    
+@media only screen and (max-width:790px){
+
+    #imagenError{
+        top: 70px;
+    }
+
+    #imagenError img{
+        width: 80%;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 620PX * * */
+    
+@media only screen and (max-width:620px){
+
+    #textoError{
+        margin-right: 5vw;
+    }
+
+    #cajaError p{
+        font-size: 2.8vw;
+    }
+
+}
+
+
+/* * * RESOLUCIONES INFERIORES A 450PX * * */
+    
+@media only screen and (max-width:450px){
+   
+    #tituloPagina404{
+        font-size: 6vw;
+        padding-top: 20px;
+    }
+
+    #imagenError{
+        position: relative;
+        top: 0;
+    }
+    
+    #imagenError img{
+        vertical-align: top;
+        width: 60%;
+    }
+
+    #textoError{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    #cajaError{
+        width: 85%;
+    }
+
+    #cajaError h2{
+        font-size: 8vw;
+    }
+    
+    #cajaError p{
+        font-size: 5vw;
+    }
+
+    .vacia{
+        display: block;
+    }
+
+    .vaciaGrande{
+        display: none;
+    }
+
+}
+
+/* * * RESOLUCIONES INFERIORES A 240PX * * */
+    
+@media only screen and (max-width:240px){
+    
+    .vaciaGrande{
+        display: block;
+    }
+}

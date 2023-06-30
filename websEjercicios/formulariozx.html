@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMULARIO ZX</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="formulariozx.css">
+    <script type="text/javascript" src="formulariozx.js"></script>
+    
+</head>
+<body>
+    <div id="formulario">
+
+        <form method="post" action="php/enviar.php">
+
+            <div id="contenedorformulario">
+
+                <div id="logozx"><img src="img/logozx3.png"></div>
+
+                <div id="tituloform">* * * * FORMULARIO * * * * </div>
+
+                <div id="cajaform">
+
+                    <div class="etiqueta"><label for="nomb">Nombre:</label></div>
+                    
+                    <div class="input">
+                        <input type="text" name="nombre" id="nomb" placeholder="Escribe tu nombre" autofocus required autocomplete="off">
+                    </div>
+
+                    <div class="etiqueta"><label for="pass">Contraseña:</label></div>
+                    
+                    <div class="input ojos">
+                        <input type="password" name="password" id="pass" placeholder="Escribe tu contraseña" required>
+                        <div id="ojo"><img src="img/ojoabierto20x20.png"></div>
+                    </div>
+
+                    <div class="etiqueta"><label for="mail">Email:</label></div>
+                    
+                    <div class="input">
+                        <input type="email" name="email" id="mail" placeholder="Escribe tu email" required autocomplete="off">
+                    </div>
+
+                    <div class="etiqueta"><label>Regalos:</label></div>
+                    
+                    <div class="input2">
+
+                        <input type="checkbox" name="regalo1" id="walkman" value="Walkman">
+                        <label for="walkman">Walkman</label>
+
+                        <input type="checkbox" name="regalo2" id="discman" value="Discman">
+                        <label for="discman">Discman</label>
+
+                        <input type="checkbox" name="regalo3" id="spectrum" value="Spectrum">
+                        <label for="spectrum">Spectrum</label>
+
+                        <input type="checkbox" name="regalo4" id="amstrad" value="Amstrad">
+                        <label for="amstrad">Amstrad</label>
+
+                    </div>
+
+                    <div class="etiqueta"><label for="opinion">Comentarios:</label></div>
+                    
+                    <div>
+                        <textarea name="comentarios" id="opinion" cols="30" rows="10" placeholder="Escribe aquí tu opinión"></textarea>
+                    </div>
+
+                    <div class="etiqueta"><label>Suscribirte:</label></div>
+                    
+                    <div class="input2">
+
+                        <input type="radio" name="suscripcion" id="si" value="SI" checked>
+                        <label for="si">SI</label>
+
+                        <input type="radio" name="suscripcion" id="no" value="NO">
+                        <label for="no">NO</label>
+
+                    </div> 
+                </div>
+
+                <div class="enviar">
+                    <input type="submit" value="Enviar"/>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+@font-face{
+  font-family: "Lobster";
+  src: url(fuentes/Lobster-Regular.ttf) format("truetype");
+}
+
+  body{
+      margin: 0px;  
+      padding: 0px;
+      background-image: url(img/fondo.jpg);
+      background-size: 15%;
+      font-family: "Lobster";
+  }
+
+/*Aquí empiezan los estilos del header*/
+
+  header{
+      width: 100%;
+      height: 60px;
+      margin: 0px auto;
+      background-image: url(img/gris_granulado.jpg);
+      display: flex;
+      position:fixed;
+      top: 0px;
+      left:0px;
+  }
+
+  #contenedorlogo{
+      margin: 2px;
+      width: 130px;
+      height: 130px;
+      background-image: url(img/gris_granulado.jpg);
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+  }
+
+  img#logo{
+      width: 110px;
+      height: 110px;
+      border-radius: 100%;
+      border-image-source: url(img/gris_granulado.jpg);
+      position: absolute;
+  }
+
+  #tituloweb{
+      background-image: url(img/gris_granulado.jpg);
+      margin-top: 40px;
+      margin-left: 150px;
+      padding: 15px;
+      color: white;
+      font-size: 20px;
+      border-radius: 5px;
+      position: absolute;
+  }
+
+  #nombreautor{
+      padding: 5px;
+      background: black;
+      margin-top: 20px;
+      margin-left: 600px;
+      color: white;
+      font-size: 14px;
+      position: absolute;
+  }
+
+/*Aquí acaban los estilos del header*/
+
+/*Aquí empiezan los estilos del section id=tienda*/
+
+  #tienda{
+      width: 90%;
+      height: auto;
+      margin: 130px auto 0px auto;
+      display: flex;
+  }
+
+  .p1, .p2, .p3, .p4{
+      margin: 0px 90px;
+      padding: 0px;
+      width: 100%;
+      border-radius: 15px;
+      background: black;
+      box-shadow: 0px 0px 15px black;
+  }
+
+  .producto{
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .producto figcaption{
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 12px;
+  }
+
+  p.descripcion{
+      margin: 0px;
+      padding: 8px;
+  }
+
+  .producto img{
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+  }
+
+  #cenicero, #cabeza{
+      border-radius: 0px 0px 15px 15px;
+  }
+
+  #martillo, #champu {
+      border-radius: 15px 15px 0px 0px;
+  }
+
+/*Aquí acaban los estilos del section id=tienda*/
+
+/*Aquí empiezan los estilos del section id=banner*/
+
+  #banner{
+      margin: 40px auto 0px auto;
+      width: 50%;
+      position: relative;
+  }
+
+
+  #flores{
+      width: 100%;
+      margin: 0px;
+      padding: 0px 1px 5px 10px;
+      background: white;
+      position: absolute;
+      left: 0px;
+      z-index: 5;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px black;
+  }
+
+  .busca{
+      margin: 0px;
+      padding: 95px 10px 9px 10px;
+      background: rgb(0, 0, 0, 0.5);
+      position: absolute;
+      right: -11px;
+      z-index: 10;
+      color: white;
+      font-size: 13px;
+      border-radius: 0px 20px 20px 0px;
+  }
+
+/*Aquí acaban los estilos del section id=banner*/
+
+/*Aquí empiezan los estilos de la animación del logotipo (div id=contenedorlogo)*/
+
+/*Animación: El logo gira a la derecha en 2s, luego a la izquerda en 2s, y queda fijo 2s*/
+/*Esta animación empieza con un retardo de 2 segundos desde la recarga de la página y
+se repite 3 veces*/
+
+  #contenedorlogo{
+      animation: animacion_logo 6s;
+      animation-iteration-count: 3;
+      animation-delay: 2s;
+      animation-timing-function: linear;
+  }
+
+  @keyframes animacion_logo {
+      0% {
+        transform: rotate(0deg);
+      }
+      8% {
+        transform: rotate(90deg);
+      }
+      16% {
+        transform: rotate(180deg);
+      }
+      24% {
+        transform: rotate(270deg);
+      }
+      32% {
+        transform: rotate(360deg);
+      }
+      36% {
+          transform: rotate(360deg);
+      }
+      44% {
+          transform: rotate(270deg);
+          }
+      52% {
+            transform: rotate(180deg);
+          }
+      60% {
+            transform: rotate(90deg);
+          }
+      68% {
+          transform: rotate(0deg);
+        }
+      100% {
+          transform: rotate(0deg);
+        }
+
+      }
+
+/*Aquí acaban los estilos de la animación del logotipo (div id=contenedorlogo)*/
+
+/*Aquí empiezan los estilos de la animación de la galería (article class=galeria)*/
+
+  .p1:hover, .p3:hover{
+  transform: rotate(-10deg);
+  }
+
+  .p2:hover, .p4:hover{
+      transform: rotate(10deg);
+  }
+
+/*Aquí acaban los estilos de la animación de la galería (article class=p1, p2, p3, p4)*/
+

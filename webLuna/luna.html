@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUNA - FLEXBOX</title>
+    <meta name="description" content="Maqueta de web creada con display flex. Diseño web responsive. Antonio González Ariza">
+    <meta name="author" content="Antonio González Ariza - Front-End Developer">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon"/>
+    <style>
+
+    /* * * * * ESTILOS GENERALES * * * * */
+
+        body{
+            margin: 0px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        img{
+            max-width: 100%;
+            vertical-align: top;
+        }
+
+/* * * * * ESTILOS DEL HEADER Y NAV * * * * */
+
+        header{
+            background-color: white;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #burguer{
+            display: none;
+            padding: 3px;
+        }
+
+        nav a{
+            text-decoration: none;
+            color: grey;
+            user-select: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+/* * * * * ESTILOS DEL MAIN * * * * */
+
+        main{
+            display: flex;
+            height: 520px;
+            width: 100%; /*Esta propiedad no parece tener efecto aquí*/
+        }
+
+/* * * * * ESTILOS DEL SECTION * * * * */
+
+        section{
+            width: 65%;
+            background-image: url(img/noche.jpg);
+            background-size: cover;
+            background-position: center 0;
+            position: relative;      
+        }
+
+        #textoazul{
+            background-color: #2196F3;
+            color: white;
+            font-size: 1.8em;
+            padding: 15px;
+            position: absolute;
+            width: 25%;
+            top: 5%;
+            left: 5%;
+        }
+
+/* * * * * ESTILOS DEL ASIDE * * * * */
+
+        aside{
+            flex: 1;
+        }
+
+        .cajalateral{
+            height: 50%;
+        }
+
+        .imagenlateral{
+            height: 65%;
+            background-size: cover;
+            background-position: center 0;
+        }
+
+        .textolateral{
+            height: 35%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 10px;
+            box-sizing: border-box;
+        }
+
+        #imagenrojo{
+            background-image: url(img/im2.jpg);
+        }
+
+        #imagengris{
+            background-image: url(img/tijeras.jpg);
+        }
+
+        #textorojo{
+            background-color: #E52D27;
+        }
+
+        #textogris{
+            background-color: #212121;
+        }
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 1000PX * * */
+        
+        @media only screen and (max-width:1000px){
+
+            main{
+                flex-direction: column;
+                height: auto;
+            } 
+
+            section{
+                height: 400px;
+                width: 100%;
+            }
+
+            aside{
+                flex: auto;
+                height: 225px;
+                display: flex;
+            }
+
+            .cajalateral{
+                height: 100%;
+                width: 50%;
+            }
+        }
+
+/* * * RESOLUCIONES INFERIORES A 665PX * * */
+        
+        @media only screen and (max-width:665px){
+
+            #textoazul{
+                width: 90%;
+                margin: auto;
+                left: 0;
+                right: 0;
+                top: auto;
+                bottom: 5%;
+            }
+            
+            aside{
+                height: 225px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .cajalateral{
+                height: 100%;
+                width: 100%;
+                display: flex;
+            }
+
+            .imagenlateral{
+                height: 100%;
+                width: 30%;
+            }
+
+            .textolateral{
+                height: 100%;
+                flex: 1;
+                font-size: 1.2em;
+            }
+        }
+
+/* * * RESOLUCIONES INFERIORES A 600PX (SOLO PARA EL MENU HAMBURGUESA) * * */
+       
+    @media only screen and (max-width:600px){
+     
+        nav{
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            right: 0;
+            top: 46px;
+            z-index: 5;
+        }
+
+        nav a{
+            color: white; 
+            background-color: grey; 
+        }
+
+        #burguer{
+            display: inherit;
+        }
+    }
+
+/* * * RESOLUCIONES INFERIORES A 500PX * * */
+
+    @media only screen and (max-width:500px){
+
+        main{
+            flex-direction: column;
+        }
+
+        section{
+            width: 100%;
+            height: 400px;  
+            background-position: center 0;
+        }
+
+        #textoazul{
+            width: 90%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 5%;
+            bottom: auto;
+        }
+        
+        aside{
+            height: 225px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cajalateral{
+            height: 100%;
+            width: 100%;
+            display: flex;
+        }
+
+        .imagenlateral{
+            height: 100%;
+            width: 50%;
+        }
+
+        .textolateral{
+            height: 100%;
+            width: 50%;
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        #tijeras{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    
+        #imagengris{
+            background-color: #E52D27;
+            background-image: none;
+        }
+
+        #imagenrojo{
+            background-color: #212121;
+            background-image: none;
+        }
+
+        #textogris{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+      
+        #textorojo{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+      
+    }
+
+/* * * RESOLUCIONES INFERIORES A 320PX * * */
+
+    @media only screen and (max-width:320px){
+
+        #textoazul{
+            width: 80%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 5%;
+            bottom: auto;
+        }
+
+        aside{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cajalateral{
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+
+       .textolateral{
+            height: auto;
+            width: 100%;
+            font-size: 1.2em;
+            padding: 5px 10px;  
+        }
+
+        #textogris, #textorojo{
+            align-items: center;
+        }
+    
+        .imagenlateral {
+            height: 0;      
+            width: 0;
+        }
+    }
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload=inicio;
+
+        function inicio(){
+            document.querySelector("#burguer").onclick=mostrarNav;
+        }
+
+        function mostrarNav(){
+            document.querySelector("nav").style.display="flex";
+        }
+
+</script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a>Inici</a>
+            <a class="menu" href="#">Ofertes</a>
+            <a class="menu" href="#">Productes</a>
+            <a class="menu" href="#">Contacte</a>
+        </nav>
+        <div id="burguer"><img src="img/rayitas.svg" alt="menu móvil"></div>
+    </header>
+
+    <main>
+
+        <section>
+            <div id="textoazul">Marketing to Millennial Parents? Here's How They're Redefining Parenting for Their Generation.</div>
+        </section>
+
+        <aside>
+
+            <div id="movil" class="cajalateral">
+                <div id="imagenrojo" class="imagenlateral"></div>
+                <div id="textorojo" class="textolateral">5 Charts That Prove Viewability and Audibility Together Are Key to Video Ad Effectiveness.</div>
+            </div>
+
+            <div id="tijeras" class="cajalateral">
+                <div id="imagengris" class="imagenlateral"></div>
+                <div id="textogris" class="textolateral">Find Out How You Stack Up to New Benchmarks for Mobile Page Speed.</div>
+            </div>
+
+        </aside> 
+
+    </main>
+</body>
+</html>

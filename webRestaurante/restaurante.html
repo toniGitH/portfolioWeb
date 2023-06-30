@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANTE EL ESPAÑOL</title>
+    <meta name="description" content="Proyecto de web de restaurante. Función de selección y eliminación de platos del menú. Función de carrito de la compra. Antonio González Ariza">
+    <meta name="author" content="Antonio González Ariza - Front-End Developer">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    
+<!-------------------------------- CSS -------------------------------->  
+
+    <style type="text/css">
+    
+/* ---------- ESTILOS GLOBALES ---------- */
+    
+    *{
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(32, 30, 30);
+    }
+
+    #velo{
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: rgba(63, 60, 60, 0.521);
+        display: none;
+        z-index: 10;
+    }
+
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+    }
+
+/* ---------- ESTILOS DE CABECERA ---------- */
+
+    #cabecera{
+        background-color: red;
+        display: grid;
+        grid-template-columns: 10% 65% 15% 10%;
+        padding: 10px;
+    }
+
+    /* Primera lína de la cabecera: logo, nombre, factura y sumatorio */
+
+    #toro img{
+        position: absolute;
+        width: 7%;
+        left: 20px;
+    }
+
+    #tituloWeb{
+        color: black;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: 'Alfa Slab One', cursive;
+        letter-spacing: 5px;
+        text-shadow: 2px 2px 2px white;
+    }
+
+    #carrito{
+        text-align: right;
+    }
+    
+    #carrito img{
+        padding: 5px;
+        width: 30%;
+    }
+
+    #sumaTotal{
+        font-size: 1.8em;
+        color: black;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    /* Segunda línea de la cabecera: NAV */
+
+    #navegacion{
+        background-color: red;
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 10px;
+    }
+
+    nav{
+        margin-right: 20px;
+    }
+
+    nav a{
+        padding: 20px;
+        text-decoration: none;
+        color:black;
+        font-size: 1.2em;
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    nav a:hover{
+        color: white;
+    }
+
+/* ---------- ESTILOS DEL MAIN ---------- */
+
+    main{
+        width: 100%;
+        margin: auto;
+        position: relative;
+    }
+
+    /* Sección Inicio */
+
+    #inicio{
+        background-image: url("img/fondos/restaurante.jpg");
+        background-size: cover;
+        width: 100%;
+        height: 100vh; 
+    }
+
+    /* Sección Restaurantes */
+
+    #restaurantes{
+        background-image: url("img/fondos/restaurante.jpg");
+        background-size: cover;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
+    /*Sección Carta*/
+
+    #contenedorCarta{
+        padding-top: 120px;
+        width: 95%;
+        margin: auto;
+        display: flex;
+    }
+
+    #carta{
+        width: 100%;
+        justify-content: center;
+        margin: 10px auto 0px auto;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(90px,1fr));
+        grid-column-gap: 20px;
+    }
+
+    .cajaProducto{
+        box-shadow: 5px 5px 2px grey;
+        background-color: yellow;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 10px;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .producto{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .nombre{
+        text-align: center;
+        font-weight: bold;
+        width: 100%;
+        background-color: red;
+        border-top-left-radius: 15px;
+        min-height: 50px;
+        font-size: 0.9em;
+    }
+
+    .texto{
+        padding: 5px;
+    }
+
+    .imagen{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .foto{
+        width: 100%;
+        vertical-align: top;
+        align-self: center;   
+    }
+
+    .precio{
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        background-color: red;
+        border-bottom-right-radius: 10px;
+        min-height: 30px;
+    }
+
+    /* Sección Comanda */
+
+    #cajaComanda{
+        width: 90%;
+        display: none;
+        margin: 20px auto;
+        flex-direction: column;
+        justify-content: center;
+        background-color:rgba(255, 0, 0, 0.884);
+        border-radius: 5px;
+        position: relative;
+        border: 2px solid rgb(233, 50, 50);
+    }
+
+    #pagarComanda{
+        position: absolute;
+        top: 5px;
+        left: 83%;
+        background-color: rgb(11, 238, 11);
+        color: black;
+        border:3px solid black;
+        outline: none;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    #pagarComanda:hover{
+        padding: 10px;
+    }
+
+    #cancelarComanda{
+        position: absolute;
+        top: 5px;
+        left: 91%;
+        background-color: red;
+        color: black;
+        outline: none;
+        border-radius: 10px;
+        padding: 5px;
+        border:3px solid black;
+    }
+
+    #cancelarComanda:hover{
+        padding: 10px;
+    }
+
+    #tituloComanda{
+        text-align: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        color: black;
+        font-size: 2.3em;
+        font-weight: bold;
+        background-color: rgba(250, 0, 0, 0.856);
+    }
+
+    #comanda{
+        padding: 20px;
+        margin: 0px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px,1fr));
+        grid-column-gap: 10px;
+        grid-row-gap: 20px;  
+    }
+
+    .cajaProductoComprado{
+        box-shadow: 5px 5px 2px grey;
+        background-color: yellow;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 10px;
+        max-height: 100px;
+        width: 110px;
+        position: relative;
+    }
+
+    .borrarProducto{
+        position: absolute;
+        top: 5px;
+        left: 5%;
+    }
+
+    .borrarProducto img{
+        width: 15%;
+    }
+
+/* ---------- ESTILOS DE LA FACTURA (position absolute respecto al MAIN) ---------- */
+
+    #contenedorFactura{ 
+        z-index: 15;
+        width: 30%;
+        margin: 10px auto 20px auto;
+        padding: 20px;
+        background-color: rgb(202, 188, 188);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+    }
+
+    #botonCerrar{
+        position: absolute;
+        top: 10px;
+        left: 90%;
+    }
+
+    #botonCerrar img{
+        width: 70%;
+    }
+
+    #factura{
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #tituloFactura{
+        width: 100%;
+        color: white;
+    }
+
+    #tituloTotal{
+        text-align: center;
+        font-size: 1.3em;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: 'Alfa Slab One', cursive;
+        color: black;
+    }
+
+    #subtitulosTotal{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60% 10% 30%;
+        grid-column-gap: 3px;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: black;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    #subtitulo1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #subtitulo2{
+        display: flex;
+        align-items: center;
+    }
+
+    #subtitulo3{
+        display: flex;
+        align-items: flex-end;
+        margin-left: 30px;
+    }
+
+    #acciones{
+        padding: 0px;
+        background-color: yellow;
+    }
+
+    #pagar{
+        margin: 10px;
+        padding: 10px;
+    }
+
+    #nota{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60% 18% 22%;
+        grid-column-gap: 3px;
+        font-size: 1.5em;
+    }
+
+    #facturaTotal{
+        width: 85%;
+        margin: 20px auto 10px auto;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .separador{
+        align-self: flex-start;
+    }
+
+    #subTotal{
+        align-self: flex-start;
+        margin-top: 5px;
+        width: 40%;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-column-gap: 10px;
+        font-size: 1.2em;
+    }
+
+    #subTotal1, #subTotal2{
+        justify-self: flex-end;
+    }
+
+    #total{
+        padding: 5px;
+        letter-spacing: 1.2px;
+    }
+
+    #importeTotal{
+        padding: 5px;
+    }
+
+    #productoComprado{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #precioComprado{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    #ivaComprado{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-left: 10px;
+    }
+
+/* ---------- ESTILOS DEL FOOTER ---------- */
+
+footer{
+    background-color: black;
+    text-align: center; 
+}
+
+#copy{
+    display: inline-block;
+    font-size: large;
+    color: white;
+    margin: 30px auto;
+}
+
+/* 
+
+    footer{
+        height: 150px;
+        background-color: rgb(32, 30, 30);
+    }
+
+    #mensajeFooter{
+        text-align: center;
+        color: white;
+        padding: 20px;
+        font-size: 2.5em;
+    }*/
+
+/* * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * */
+
+    /*RESOLUCIONES INFERIORES A 1250PX*/
+
+        @media only screen and (max-width:1250px){
+        
+            #tituloWeb{
+                font-size: 2em;
+            }
+        }
+
+    /*RESOLUCIONES INFERIORES A 1010PX*/
+
+        @media only screen and (max-width:1010px){
+        
+            #tituloWeb{
+                font-size: 1.5em;
+            }
+        }
+
+    /*RESOLUCIONES INFERIORES A 820PX*/
+
+        @media only screen and (max-width:820px){
+        
+            #tituloWeb{
+                font-size: 1.3em;
+                margin-left: 20px;
+            }
+
+            #toro img{
+                width: 9%;
+                left: 20px;
+            }
+
+            #navegacion{
+                justify-content: center;
+            }
+        }
+
+    /*RESOLUCIONES INFERIORES A 770PX*/
+
+        @media only screen and (max-width:770px){
+        
+            #tituloWeb{
+                font-size: 1.1em;
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+
+            #toro img{
+                width: 9%;
+                left: 20px;
+            }
+
+            #navegacion{
+                justify-content: center;
+            }
+        }
+
+    </style>
+
+<!-------------------------------- JAVASCRIPT -------------------------------->  
+
+    <script type="text/javascript">
+        window.onload=inicio;
+        var menu=[];
+        var cuenta=0;
+        var cuentaSin=0;
+        var indice;
+        var productos=[
+                ["Butifarra con judías","butifarraConJudias.png",8],
+                ["Café con leche","cafe.png",2.1],
+                ["Cerveza artesana","cerveza.png",1.8],
+                ["CocaCola o refresco","cocaCola.png",1.60],
+                ["Dorada al horno","doradaAlHorno.png",9.90],
+                ["Ensalada variada","ensalada.png",6.30],
+                //["Espaguetis bolognesa","espaguetisBolognesa.png",6.50],
+                ["Flan con nata","flanConNata.png",2.50],
+                //["Burguer patatas","hamburguesaConPatatas.png",8.60],
+                ["Helado de 3 bolas","helado.png",2.20],
+                ["Melón con jamón","melonConJamon.png",6.80],
+                ["Paella de marisco","paella.png",12.80],
+                ["Pollo con patatas","polloAlAst.png",8.50],
+                ["Tortilla de patatas","tortillaDePatatas.png",10.20]
+            ]
+        var cantidad=productos.length;
+
+        function inicio(){
+            document.querySelector("#carrito").onclick=verFactura;
+            document.querySelector("#pagarComanda").onclick=verFactura;
+            document.querySelector("#botonCerrar").onclick=cerrarFactura;
+            document.querySelector("#cancelarComanda").onclick=anularComanda;
+            document.querySelector("#aHome").onclick=aHome;
+            document.querySelector("#nuestrosRestaurantes").onclick=verRestaurantes;
+            document.querySelector("#verCarta").onclick=verCarta;
+            document.querySelector("#contacta").onclick=contacta;
+            document.querySelector("#botonImprimir").onclick=imprimir;
+        }
+
+        function aHome(){
+            document.querySelector("#inicio").style.display="block";
+            document.querySelector("#restaurantes").style.display="none";
+            document.querySelector("#contenedorCarta").style.display="none";
+            document.querySelector("#cajaComanda").style.display="none";
+        }
+
+        function verRestaurantes(){
+            alert ("Ver Restaurantes");
+        }
+
+        function contacta(){
+            alert ("Ir a Contacto");
+        }
+
+        function verCarta(){
+            document.querySelector("#inicio").style.display="none";
+            document.querySelector("#contenedorCarta").style.display="flex";
+            document.querySelector("#carta").innerHTML="";
+
+            for(k=0;k<cantidad;k++){
+                document.querySelector("#carta").insertAdjacentHTML("beforeend",`
+                    <div attr="${k}" class="cajaProducto">
+                    <div class="producto">
+                        <div class="nombre"><div class="texto">${productos[k][0]}</div></div>
+                        <div class="imagen"><img class="foto" src="img/platos/${productos[k][1]}"></div>
+                        <div class="precio"><div class="texto">${productos[k][2]} €</div></div>
+                    </div>
+                    </div>
+                    `);
+                document.querySelectorAll(".cajaProducto")[k].onclick=seleccionar;
+            }
+            
+            if (cuenta>0){
+                document.querySelector("#cajaComanda").style.display="flex";
+            }
+        }
+
+        function seleccionar(){
+            indice=Number(this.getAttribute("attr"));
+            /*this.style.opacity="30%";*/
+            /*this.style.display="none";*/
+            menu.push(indice);
+            cuenta+=(productos[indice][2])*1.1;
+            cuentaSin+=(productos[indice][2]);//NUEVO
+            document.querySelector("#sumaTotal").innerHTML=`${Number((cuenta).toFixed(2))}€`;
+            document.querySelector("#importeTotal").innerHTML=`${Number((cuenta).toFixed(2))}€`;
+            document.querySelector("#subTotal1").innerHTML=`${Number((cuentaSin).toFixed(2))}€`;
+            document.querySelector("#subTotal2").innerHTML=`${Number((cuentaSin*0.1).toFixed(2))}€`;
+            document.querySelector("#cajaComanda").style.display="flex";
+            document.querySelector("#comanda").insertAdjacentHTML("beforeend",`
+                <div attr="${indice}" class="cajaProductoComprado">
+                    <div class="producto">
+                        <div class="borrarProducto"><img class="cruzBorrarProducto" src="img/iconos/cruz.svg"></div>
+                        <div class="imagen"><img class="foto" src="img/platos/${productos[indice][1]}"></div>
+                        <div class="precio"><div class="texto">${productos[indice][2]} €</div></div>
+                    </div>
+                </div>
+                `);
+            document.querySelectorAll(".borrarProducto")[menu.length-1].onclick=eliminarProducto;
+        }
+
+        function eliminarProducto(){
+            hijos=this.parentNode.parentNode.parentNode.children;
+            for (let k=0;k<hijos.length;k++){
+                if (hijos[k]==this.parentNode.parentNode){
+                    cuenta-=Number((productos[menu[k]][2])*1.1).toFixed(2);//LINEA MUY IMPORTANTE PARA ACTUALIZAR CORRECTAMENTE EL IMPORTE DEL CARRITO Y DEL TOTAL DE LA FACTURA AL ELIMINAR PRODUCTOS
+                    cuentaSin-=Number(productos[menu[k]][2]).toFixed(2);//LINEA MUY IMPORTANTE PARA ACTUALIZAR CORRECTAMENTE EL IMPORTE DEL CARRITO Y DEL TOTAL DE LA FACTURA AL ELIMINAR PRODUCTOS
+                    actualizarImporte();
+                    indice-=1;
+                    this.parentNode.parentNode.remove();
+                    menu.splice(k,1);
+                }
+            }
+        }
+
+        function actualizarImporte(){
+            document.querySelector("#sumaTotal").innerHTML=`${Number((cuenta).toFixed(2))}€`;
+            document.querySelector("#importeTotal").innerHTML=`${Number((cuenta).toFixed(2))}€`;
+            document.querySelector("#subTotal1").innerHTML=`${Number((cuentaSin).toFixed(2))}€`;
+            document.querySelector("#subTotal2").innerHTML=`${Number((cuentaSin*0.1).toFixed(2))}€`;
+        }
+
+        function verFactura(){
+            document.querySelector("#contenedorFactura").style.display="flex";
+            document.querySelector("#velo").style.display="block";
+            document.querySelector("#productoComprado").innerHTML="";
+            document.querySelector("#precioComprado").innerHTML="";
+            document.querySelector("#ivaComprado").innerHTML="";
+            
+            let longitud=menu.length;
+            for(let k=0; k<longitud;k++){
+                document.querySelector("#productoComprado").insertAdjacentHTML("beforeend",`
+                <div class="listaProducto">${productos[menu[k]][0]}</div>
+                `)
+                document.querySelector("#precioComprado").insertAdjacentHTML("beforeend",`
+                <div class="listaPrecio">${productos[menu[k]][2]} €</div>
+                `)
+                document.querySelector("#ivaComprado").insertAdjacentHTML("beforeend",`
+                <div class="listaIva">${Number((productos[menu[k]][2]*0.1).toFixed(2))} €</div>
+                `)
+            }
+        }
+
+        function cerrarFactura(){
+            document.querySelector("#contenedorFactura").style.display="none";
+            document.querySelector("#velo").style.display="none";
+        }
+
+        function anularComanda(){
+            document.querySelector("#comanda").innerHTML="";
+            document.querySelector("#cajaComanda").style.display="none";
+            document.querySelector("#sumaTotal").innerHTML="0 €";
+            document.querySelector("#importeTotal").innerHTML="";
+            document.querySelector("#subTotal1").innerHTML="";
+            document.querySelector("#subTotal2").innerHTML="";
+            document.querySelector("#productoComprado").innerHTML="";
+            document.querySelector("#precioComprado").innerHTML="";
+            document.querySelector("#ivaComprado").innerHTML="";
+            document.querySelector("#velo").style.display="none";
+            cerrarFactura();
+            menu=[];
+            cuenta=0; 
+            cuentaSin=0; 
+        }
+
+        function imprimir(){
+            window.print();
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="velo"></div>
+    <header>
+        <div id="cabecera">
+            <div id="toro"><img id="aHome" src="img/logos/toro.png" alt="restaurante el Español"></div>
+            <div id="tituloWeb">RESTAURANTE - EL ESPAÑOL</div>
+            <div id="carrito"><img src="img/iconos/tufactura.png"></div>
+            <div id="sumaTotal">0 €</div>
+        </div>
+        <div id="navegacion">
+            <nav>
+                <a id="nuestrosRestaurantes">Nuestros Restaurantes</a>
+                <a id="verCarta">Haz tu pedido</a>
+                <a id="contacta">Contacta</a>
+            </nav>
+        </div>
+        
+    </header>
+
+    <main>
+        <section id="inicio">
+        </section>
+
+        <section id="restaurantes">
+        </section>
+
+        <section id="contenedorCarta">
+            <div id="carta"></div>
+        </section>
+
+        <section id="cajaComanda">
+            <div id="tituloComanda">ESTE ES TU PEDIDO</div>
+            <button id="pagarComanda">PAGAR</button>
+            <button id="cancelarComanda">ANULAR</button>
+            <div id="comanda"></div>
+        </section>
+        
+        <div id="contenedorFactura">
+            <div id="botonCerrar"><img src="img/iconos/cruz.svg"></div>
+            <div id="factura">
+                <div id=tituloFactura>
+                    <div id="tituloTotal">RESTAURANTE - EL ESPAÑOL</div>
+                    <div id="subtitulosTotal">
+                        <div id="subtitulo1">PRODUCTO</div>
+                        <div id="subtitulo2">P.V.P.</div>
+                        <div id="subtitulo3">IVA (10%)</div>
+                    </div>   
+                </div>
+                <div id="nota">
+                    <div id="productoComprado"></div>
+                    <div id="precioComprado"></div>
+                    <div id="ivaComprado"></div>
+                </div>
+                <div class="separador">---------------------------------------------</div>
+                <div id="subTotal">
+                    <div class="textoSub">Subtotal</div>
+                    <div id="subTotal1"></div>
+                    <div class="textoSub">IVA(10%)</div>
+                    <div id="subTotal2"></div>
+                </div>
+                <div class="separador">---------------------------------------------</div>
+                <div id="facturaTotal">
+                    <div id="total">TOTAL A PAGAR</div>
+                    <div id="importeTotal"></div>
+                </div>
+                <div id="acciones">
+                    <button id="botonImprimir">IMPRIMIR TICKET</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p id="copy">&copy; 2021 por Antonio González Ariza · Todos los derechos reservados</p>
+    </footer>
+
+</body>
+
+</html>

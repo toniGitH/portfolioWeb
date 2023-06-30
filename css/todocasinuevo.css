@@ -1,0 +1,99 @@
+
+body{
+    font-family: "Montserrat";
+}
+
+#opcPortfolio{
+    color: rgb(112, 112, 112);
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+#logoTCN{
+    width: 40%;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#logoTCN img{
+    vertical-align: top;
+    width: 20vw;
+    padding: 10px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+#logoTCN img:hover{
+    padding: 0px; 
+}
+
+.imagenInterna{
+    width: 50%;
+    margin: 60px auto;
+}
+
+.imagenInterna img{
+    vertical-align: top;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.imagenInterna:hover{
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+        
+@media only screen and (max-width:960px){
+    
+    #logoTCN img{
+        width: 30vw;
+    }
+
+    .imagenInterna{
+        width: 35%;
+        margin: 30px auto;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 640PX * * */
+        
+@media only screen and (max-width:640px){
+
+    #logoTCN img{
+        width: 40vw;
+        margin: 10px auto;
+    }
+
+    .imagenInterna{
+        width: 60%;
+        margin: 30px auto;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+        
+@media only screen and (max-width:360px){
+
+    #logoTCN img{
+        width: 45vw;
+        margin: 0px auto;
+    }
+
+    .imagenInterna{
+        width: 80%;
+        margin: 20px auto;
+    }
+}
+

@@ -1,0 +1,149 @@
+#opcPortfolio{
+    color: rgb(112, 112, 112);
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+
+    /* ESTILOS DEL ENCABEZADO DEL PROTFOLIO */
+
+#encabezadoPortfolio{
+    padding-top: 40px;
+    text-align: center;
+    font-family: "Fredoka";
+    padding: 10px auto;
+    font-size: 3vw;
+    letter-spacing: 2px;
+    color: rgb(73, 67, 67);
+}
+
+    /* CONTENEDOR DE SECCIONES */
+
+#contenedorMainIndex{
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+    grid-column-gap: 50px;
+}
+
+    /* SECCIONES */
+
+.seccionIndex{
+    width: 75%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.281);
+}
+
+.seccionIndex:hover{
+    box-shadow: 0px 0px 15px black;
+}
+
+.imagenSeccionIndex{
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.anteTituloSeccionIndex{
+    margin: 0;
+    padding: 0px 10px;
+    text-align: center;
+    font-family: "Fredoka";
+    font-size: 1.5vw;
+    color: rgb(39, 35, 35);
+}
+
+.tituloSeccionIndex{
+    margin: 0;
+    padding: 0px 10px;
+    font-family: "Fredoka";
+    font-size: 1.5vw;
+    color: rgb(73, 67, 67);
+}
+
+#tituloTCN{
+    font-size: 1.6vw;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+    
+@media only screen and (max-width:960px){
+
+    #encabezadoPortfolio{
+        font-size: 3.8vw;
+    }
+
+    #contenedorMainIndex{
+        width: 70%;
+        padding-top: 50px;
+        padding-bottom: 80px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 10%;
+        grid-row-gap: 15%;
+    }
+
+    .anteTituloSeccionIndex, .tituloSeccionIndex{
+        font-size: 1.8vw;
+    }
+    
+    #tituloTCN{
+        font-size: 2.1vw;
+    }
+
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+    
+@media only screen and (max-width:360px){
+   
+    #encabezadoPortfolio{
+        font-size: 5vw;
+    }
+
+    #contenedorMainIndex{
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 170px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-row-gap: 5%;
+    }
+
+    .seccionIndex{
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.281);
+    }
+
+    .anteTituloSeccionIndex, .tituloSeccionIndex{
+        font-size: 4vw;
+    }
+    
+    #tituloTCN{
+        font-size: 4.2vw;
+    }
+   
+}

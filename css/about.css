@@ -1,0 +1,118 @@
+body{
+    font-family: "Montserrat";
+}
+
+header{
+    background-color: white;
+}
+
+#opcAbout{
+    color: rgb(112, 112, 112);
+}
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+#saludo{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-column-gap: 50px;
+}
+
+#fotoPersonal{
+    text-align: right;
+}
+
+#fotoPersonal img{
+    vertical-align: top;
+    width: 60%;
+    border-radius: 50%;
+}
+
+#hola{
+    align-self: center;
+}
+
+#hola p{
+    font-size: 8vw;
+    font-weight: bold;
+    font-family: "Fredoka";
+    letter-spacing: 15px;
+}
+
+.texto a{
+    text-decoration: none;
+    color: black;
+}
+
+.texto a:hover{
+    color: rgb(112, 112, 112);
+}
+
+#cajaFormulario{
+    font-family: "Fredoka";
+}
+
+.bigicon {
+    font-size: 30px;
+    color: black;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+    
+@media only screen and (max-width:960px){
+    
+    #saludo{
+        padding: 20px 10px;
+        grid-column-gap: 30px;
+    }
+
+    #fotoPersonal img{
+        width: 80%;
+    }
+
+    #vaciaCabecera{
+        display: none;
+    }
+}
+
+
+/* * * RESOLUCIONES INFERIORES A 600PX * * */
+
+@media only screen and (max-width:600px){
+    
+    #saludo{
+        padding: 20px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #fotoPersonal{
+        text-align: center;
+    }
+
+    #fotoPersonal img{
+        width: 60%;
+    }
+} 
+
+/* * * RESOLUCIONES INFERIORES A 576PX * * */
+    
+@media only screen and (max-width:576px){
+    #cajaFormulario{
+        background-color: transparent !important;
+      }
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+    
+@media only screen and (max-width:360px){
+   
+}

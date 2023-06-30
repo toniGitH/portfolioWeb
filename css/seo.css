@@ -1,0 +1,118 @@
+
+body{
+    font-family: "Montserrat";
+}
+
+#opcPortfolio{
+    color: rgb(112, 112, 112);
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+.imagenPrincipal{
+    width: 60%;
+    margin: 50px auto;
+}
+
+.imagenPrincipal img{
+    vertical-align: top;
+    width: 100%;
+}
+
+.imagenInterna{
+    width: 70%;
+    margin: 60px auto;
+}
+
+.imagenInterna img{
+    vertical-align: top;
+    width: 100%;
+}
+
+#imagenSerp{
+    width: 90%;
+    margin: 60px auto;
+}
+
+#capturaSerp{
+    vertical-align: top;
+    width: 100%;
+    border-radius: 10px;
+}
+
+#iconoAuditoria{
+    width: 100%;
+    text-align: center;
+}
+
+#iconoAuditoria img{
+    vertical-align: top;
+    width: 20vw;
+    padding: 20px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+#iconoAuditoria img:hover{
+    padding: 0px; 
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+        
+@media only screen and (max-width:960px){
+
+    .imagenPrincipal{
+        width: 80%;
+    }
+
+    .imagenInterna{
+        width: 70%;
+        margin: 40px auto;
+    }
+    
+    #iconoAuditoria img{
+        width: 30vw;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 640PX * * */
+        
+@media only screen and (max-width:640px){
+
+    #iconoAuditoria img{
+        width: 35vw;
+    }
+
+    #imagenSerp{
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+        
+@media only screen and (max-width:360px){
+
+    .imagenInterna{
+        width: 80%;
+    }
+
+    #imagenSerp{
+        width: 100%;
+        margin: 30px auto;
+    }
+
+    #iconoAuditoria img{
+        width: 40vw;
+    }
+}
+

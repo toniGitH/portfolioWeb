@@ -1,0 +1,70 @@
+#opcInicio{
+    color: rgb(112, 112, 112);
+}
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+.vacia{
+    height: 5vh;
+}
+
+#cajaCita{
+    width: 100vw;
+    text-align: center;
+}
+
+#cita{
+    box-sizing: border-box;
+    vertical-align: top;
+    width: 45vw;
+    padding: 40px 0px;
+}
+
+#cajaDibujo{
+    width: 90vw;
+    margin: auto;
+    text-align: center;
+}
+
+#dibujo{
+    vertical-align: top;
+    width: 50%;
+    padding: 25px;
+    margin-bottom: 50px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+    
+@media only screen and (max-width:960px){
+
+    #cita{
+        width: 60vw;
+        padding: 60px 0px 0px 0px;
+    }
+
+    #dibujo{
+        width: 70%;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+    
+@media only screen and (max-width:360px){
+   
+    #cita{
+        width: 80vw;
+        padding: 40px 0px 0px 0px;
+    }
+
+    #dibujo{
+        width: 70%;
+    }
+   
+}

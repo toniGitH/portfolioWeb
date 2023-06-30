@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViajesOne.com</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+    <style>
+
+        body{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 10px;
+            padding: 0px;
+            }
+
+    /*Aquí empiezan los estilos de la cabecera (header) de la página*/
+
+        header{
+            background: lightgreen;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+        }
+        
+        #cabecera{
+            display: flex;
+            justify-content: center;
+        }
+
+        #logo{
+            margin: 2px;
+            width: 80px;
+            height: 80px;
+            }
+        
+        #titulo{
+            font-size: 50px;
+            color: maroon;
+            margin-bottom: 2px;
+            
+    /*Aquí acaban los estilos de la cabecera (header) de la página*/
+
+    /*Aquí empiezan los estilos del menú de navegación (nav) de la página*/
+
+        }
+        nav{
+            background: green;
+            display: flex;
+            justify-content: flex-start;
+            }
+        
+        nav a{
+            margin: 3px;
+            padding: 5px;
+            color: white;
+            border-right: solid thin white;
+        }
+
+    /*Aquí acaban los estilos del menú de navegación (nav) de la página*/
+
+    /*Este es el estilo de la imagen bajo el menú de navegación*/
+
+        #slider{
+            width: 100%;
+        }
+
+    /*Aquí acaba el estilo de la imagen bajo el menú de navegación*/
+
+    /*Aquí empiezan los estilos de las 3 secciones CASAS, CAMPING y HOTELES*/
+
+        .alojamiento{
+            border-radius: 15px 0px 15px 0px;
+            margin: 50px auto;
+            border: solid 5px;
+            background: white;
+            padding: 15px;
+        }
+        
+        .icono_alojamiento{
+            width: 50px;
+            height: 50px;        
+        }
+
+        .titulo_alojamiento{
+            margin-top: 20px;
+            padding: 0px;
+            font-size: 30px;
+        }
+
+        .descripcion_alojamiento{
+            padding: 0px;
+            font-size: 20px;
+        }
+        .alojamiento#casas{
+            border-color: springgreen;
+            background: salmon;
+        }
+
+        .alojamiento#camping{
+            border-color: green;
+            background: lightgreen;
+        }
+
+        .alojamiento#hoteles{
+            border-color: blue;
+            background: lightblue;
+        }
+
+    /*Aquí acaban los estilos de las 3 secciones CASAS, CAMPING y HOTELES*/
+
+    /*Aquí empiezan los estilos del recuadro de opiniones*/
+
+        .titulo_opiniones{
+            font-size: 18px;
+        }
+
+        .opiniones{
+            margin: 50px auto;
+            border-top: solid 10px gray;
+            border-bottom: solid 10px gray;
+            padding: 15px;
+            background: lightgray;
+        }
+
+        .hombre_mujer{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+        }
+
+        img.user{
+            width: 70px;
+            height: 70px;  
+        }
+
+
+        img.star{
+            width: 25px;
+            height: 25px;
+            background: blue;
+            margin: 2px;
+        }
+
+        #estrellas{
+            display: flex;
+            align-items: flex-end;
+        }
+
+    /*Aquí acaban los estilos del recuadro de opiniones*/
+
+    </style>
+    
+</head>
+
+<body>
+    <header>
+        <div id="cabecera">
+            <img id="logo" src="img/world.png">
+            <h1 id="titulo">ViajesOne.com</h1>
+        </div>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Casas Rurales</a>
+            <a href="#">Camping</a>
+            <a href="#">Hoteles</a>
+            <a href="#">Opiniones</a>
+        </nav>
+    
+        <img id="slider" src="img/arbolcarretera.PNG">
+
+    </header>
+
+    
+    
+    <section>
+
+        <article class="alojamiento" id="casas">
+            <img class="icono_alojamiento" src="img/village.png">
+            <h1 class="titulo_alojamiento" >CASAS RURALES</h1>
+            <p class="descripcion_alojamiento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus omnis debitis a, rem velit, nulla et quis ducimus officia animi corrupti ratione sapiente voluptatem deleniti nisi eos. Alias, quidem!</p>
+        </article>
+
+        <article class="alojamiento" id="camping">
+            <img class="icono_alojamiento" src="img/tent.png">
+            <h1 class="titulo_alojamiento" >CAMPING</h1>
+            <p class="descripcion_alojamiento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus omnis debitis a, rem velit, nulla et quis ducimus officia animi corrupti ratione sapiente voluptatem deleniti nisi eos.
+                Alias, quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus laudantium odio minus necessitatibus est. Error at hic nisi voluptate officiis cum esse. Consectetur sunt, minima veritatis sapiente quod magni?</p>
+        </article>
+
+        <article class="alojamiento" id="hoteles">
+            <img class="icono_alojamiento" src="img/hotel.png">
+            <h1 class="titulo_alojamiento" >HOTELES</h1>
+            <p class="descripcion_alojamiento">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, natus omnis debitis a, rem velit, nulla et quis ducimus officia animi corrupti ratione sapiente voluptatem deleniti nisi eos.
+                Alias, quidem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum temporibus laudantium odio minus necessitatibus est. Error at hic nisi voluptate officiis cum esse.
+                Consectetur sunt, minima veritatis sapiente quod magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia vel dolorum nihil nam pariatur quisquam necessitatibus iusto repellat eaque id!</p>
+        </article>
+
+        <article class="opiniones">
+            <h2 class="titulo_opiniones">OPINIONES DE CLIENTES</h2>
+            <div class="hombre_mujer">
+                <img class="user" src="img/man.png">
+                <div id="estrellas">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                </div>
+            </div>
+
+            <p>Siempre dan una respuesta, una solución, sin tiempo de espera, y con un trato amigable. Excelente servicio</p>
+
+            <div class="hombre_mujer">
+                <img class="user" src="img/woman.png">
+                <div id="estrellas">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                    <img class="star" src="img/star.png">
+                </div>
+            </div>
+
+            <p>Estoy muy satisfecha con sus servicios y alojamientos ofrecidos</p>
+
+        </article>
+
+    </section>
+</body>
+</html>

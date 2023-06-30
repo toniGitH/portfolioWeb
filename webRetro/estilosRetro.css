@@ -1,0 +1,359 @@
+
+/************************** ESTILOS GENERALES **************************/
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/************************** ESTILOS DEL HEADER **************************/
+
+header{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 120px;
+}
+
+/* ----- ESTILOS DE LA BARRA SUPERIOR ----- */
+
+#barraSuperior{
+    background-color: #fdfdfd;
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#infoEmail{
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    user-select: none;
+}
+    
+#contenedorCarrito{
+    width: 100%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+    
+#iconoCarrito {
+    width: 3%;
+    margin: 0px;
+    padding: 5px;
+}
+    
+#sumaTotal{
+    font-size:1.2em;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    padding: 5px;
+    user-select: none;
+}
+
+/* ----- ESTILOS DE LA CABECERA ----- */
+
+#cabecera{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-column-gap: 150px;
+    background-color: red;
+    border-bottom: 3px solid white;
+}
+
+#logo{
+    margin-top: -40px;
+    padding: 10px;
+    margin-left: 220px;
+    width: 100%;
+}
+
+.logotipo{
+    width: 100%;
+    vertical-align: top;
+    border-radius: 5%;
+}
+
+#cajaBotones{
+    margin-right: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.botonDeMenu{
+    margin: 5px 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0px 0px 3px black;
+}
+
+.botonDeMenu:hover{
+    color: black;
+    text-shadow: 0px 0px 3px white; 
+}
+
+/* ----- ESTILOS DEL MENU DE TIENDA ----- */
+
+#menu{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-column-gap: 10px;
+    background-color: red;
+    width: 100%;
+    margin: auto;
+    display:none;
+    border-bottom: 5px solid white;
+}
+
+#menuCat{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.imagenDeMenu{
+    width: 7%;
+    margin: 0px 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconoMenu{
+    width: 100%; 
+}
+
+.tituloIcono{
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 3px;
+}
+
+/* ----- ESTILOS DE LOS FILTROS ----- */
+
+#cajaFiltros{
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    align-self: center;
+    width: 180px;
+    padding: 0px 10px;
+}
+
+#marcoFiltros{
+    background-color: white;
+    padding: 0px 10px 0px 10px;
+    margin-right: 50px;
+    border-radius: 10px;
+    border-radius: 5px;
+}
+
+.selectFiltros{
+    width: 180px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 1em;
+    color: red;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+option{
+    background-color: rgb(253, 47, 47);
+    color: black;
+}
+
+select option {
+    margin: 40px;
+    background-color: rgba(235, 231, 17, 0.3);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/************************** ESTILOS DEL MAIN **************************/
+
+main{
+    margin-top: 130px;
+}
+
+#blog{
+    display: none;
+}
+
+/* ----- ESTILOS DEL ESCAPARATE ----- */
+
+#tiendaOnline{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    display: none;
+}
+
+#escaparate{
+    padding: 50px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    grid-column-gap: 50px;
+    grid-row-gap: 100px;
+}
+
+#lateral{
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----- ESTILOS DEL PRODUCTO INDIVIDUAL ----- */
+
+.cajaProducto{
+    padding: 15px;
+    background-color: rgb(231, 225, 225);
+    border-radius: 10px 0px 40px 10px;
+    box-shadow: 8px 8px 3px gray;
+    height: 240px;
+}
+
+img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.nombre{
+    font-size: 1.4em;
+    text-align: center;
+    margin: 10px auto 5px auto;
+}
+
+.descripcion{
+    font-size: 1em;
+    text-align: center;
+    margin: 10px auto;
+    display: none;
+}  
+
+.cajaBotones{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 5px;
+    padding: 5px;
+}
+
+.precio{
+    font-size: 1.2em;
+    background-color: rgb(179, 176, 176);
+    padding: 4px 9px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px black;
+    color: black;
+}
+
+.comprar{
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#imagenBotonComprar{
+    width:40%;
+}
+
+.comprar:hover{
+    background-color: green;
+}
+
+/* ----- ESTILOS DEL CARRITO ----- */
+
+#productosCarrito{
+    display: none;
+    z-index: 5;
+}
+
+#carrito{
+    display:flex;
+    align-items: center;
+}
+
+.añadido{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin: 5px 10px;
+    border-radius: 25px 0px 25px 25px;
+    box-shadow: 0px 0px 20px rgb(231, 225, 225);
+    background-color: rgb(231, 225, 225);
+    padding: 10px;
+}
+
+.añadidoImagen img{
+    width: 100px;
+    box-sizing: border-box;
+    margin-left: -10px;
+}
+
+.añadidoDatos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.añadidoPapelera img{
+    width:30px;
+    margin-bottom: 20px;
+}
+
+.añadidoPrecio{
+    font-size: 1.3em;
+    margin-top: 20px;
+    padding:5px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+/************************** ESTILOS DEL FOOTER **************************/
+
+footer{
+    background-color: black;
+    text-align: center; 
+}
+
+#copy{
+    display: inline-block;
+    font-size: large;
+    color: white;
+    margin: 30px auto;
+}

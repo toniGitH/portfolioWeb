@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI PÁGINA PERSONAL</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+    <style>
+
+        body{
+            margin: 0px auto;
+            padding: 0px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+    /*Aquí empiezan los estilos del header*/
+
+        header{
+            background: lightgray;
+        }
+
+        h1{
+            margin: 0px auto;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+    /*Aquí acaban los estilos del header*/
+
+    /*Aquí empiezan los estilos del main*/
+
+        h2{
+            margin: 0px auto;
+            padding: 15px;
+            font-size: 23px;
+            font-style: italic;
+            text-align: right;
+        }
+
+     /*Aquí empiezan los estilos de la primera sección (los tres bloques horizontales)*/
+
+        #bloque1{
+            margin: 1px 10px 10px 10px;
+            display: flex;
+        }
+
+        article{
+            width: 100%;
+            margin: 10px;
+            border: solid thin black;
+            border-radius: 15px 0px 15px 0px;
+            box-shadow: -2px -1px 5px black;
+            padding: 10px;
+        }
+
+        #web{
+            background: cornflowerblue;
+        }
+
+        #montaña{
+            background: lightgreen;
+        }
+
+        #animales{
+            background: salmon;
+        }
+
+        h3.tituloaficiones{
+            text-align: center;
+            color: white;
+            font-size: 23px;
+        }
+
+        .textoaficiones{
+            text-align: justify;
+        }
+
+        .iconosaficiones{
+            display: flex;
+            justify-content: center;
+        }
+
+        .diseñoweb{
+            width: 30px;
+            height: 30px;
+            padding: 8px;
+        }
+
+        .noweb{
+            width: 60px;
+            height: 60px;
+            padding: 2px;
+        }
+
+        .enfasis{
+            font-style: italic;
+        }
+
+    /*Aquí acaban los estilos de la primera sección (los tres bloques horizontales)*/
+
+    /*Aquí empiezan los estilos de la segunda sección (bloque individual)*/
+
+        section#bloque2{
+            margin: 1px 10px 10px 10px;
+            display: flex;
+           
+        }
+    
+        article#series{
+            background: lightgrey;
+            
+        }
+
+        div#otras{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: solid thin black;
+            border-radius: 15px 0px 15px 0px;
+            box-shadow: -2px -1px 5px black;
+            background: grey;
+
+        }
+
+        video{
+            margin-bottom: 40px;
+        }
+
+        h4{
+            color: white;
+            font-size: 21px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        p.otrasaficiones{
+            padding: 10px;
+            text-align: justify;
+        }
+
+    /*Aquí acaban los estilos de la segunda sección (bloque individual)*/
+
+    /*Aquí empiezan los estilos del footer*/
+
+        #copy{
+            background: gray;
+            margin: 0px 10px;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    /*Aquí acaban los estilos del footer*/
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Página personal de <span style="color: blue;">Antonio González Ariza</span></h1>
+    </header>
+
+    <main>
+        <h2 >Mis aficiones</h2>
+
+        <section id="bloque1">
+
+            <article id="web">
+                <h3 class="tituloaficiones">Diseño Web</h3>
+                <p class="textoaficiones"> Me encanta el diseño web. He tocado un poco de cs3, html5 y algo de javascript. Cada día pretendo aumentar un poquito más mis conocimientos, que luego comparto con mis alumnos.</p>
+                <p class="enfasis"> < Siempre aprendiendo > </p>
+                <div class="iconosaficiones">
+                <img class="diseñoweb" src="img/css-3.png">
+                <img class="diseñoweb" src="img/html5.png">
+                <img class="diseñoweb" src="img/js.png">
+                </div>
+            </article>
+
+            <article id="montaña">
+                <h3 class="tituloaficiones">Montaña</h3>
+                <p class="textoaficiones"> Me encanta salir a hacer rutas por la sierra. Es maravilloso estar rodeada de árboles, aire fresco y naturaleza. Sentir esa sensación de euforia y libertad cuando llegas a la cima...</p>
+                <p class="enfasis">Próximo objetivo... el Mulhacen</p>
+                <div class="iconosaficiones">
+                <img class="noweb" src="img/montain.png">
+                </div>
+            </article>
+
+            <article id="animales">
+                <h3 class="tituloaficiones">Animales</h3>
+                <p class="textoaficiones">Cuido, junto con mi familia, de una mascota llamada Sara. Es una conejita blanca y negra. La cepillamos , le damos su comida, la levamos al veterinario... y de vez en cuando la llevamos al parque donde corretea a sus anchas</p>
+                <div class="iconosaficiones">
+                <img class="noweb" src="img/rabbit.png">
+                </div>
+            </article>
+
+        </section>
+
+        <section id="bloque2">
+
+                <article id="series">
+                    <h4>Otras aficiones</h4>
+                    <div id="otras">
+                        <p class="otrasaficiones">Otra de mis grandes aficiones. ¡¡¡Las series!!!. No puedo evitarlo, cada vez me engancho a más series. Aunque algunas con el tiempo me van aburriendo. Comparto esta afición con mi marido, que es un verdadero fanático.</p>
+                        <video width="200" height="150" controls autoplay loop>
+                            <source src="videos/big_buck_bunny.ogv" type="video/ogg"/>
+                            <source src="videos/big-buck-bunny.webm" type="video/webm"/>
+                            <source src="videos/big-buck-bunny.mp4" type="video/mp4"/>
+                    
+                            <p>Tu navegador no soporta HTML5</p>
+                         </video>
+                    </div>
+                </article>
+
+        </section>
+
+    </main>
+    
+    <footer>
+
+        <p id="copy" >&copy Antonio González Ariza - 2021</p>
+
+    </footer>
+
+
+
+
+
+</body>
+</html>

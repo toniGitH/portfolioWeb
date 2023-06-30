@@ -1,0 +1,532 @@
+/*ESTILOS DE TIPOGRAFIA*/
+
+@font-face{
+    font-family: "RobotoBold";
+    src: url(../fonts/RobotoCondensed-Bold.ttf) format("truetype");
+    }
+
+@font-face{
+    font-family: "Fredoka";
+    src: url(../fonts/FredokaOne-Regular.ttf) format("truetype");
+}
+
+@font-face{
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf) format("truetype");
+}
+
+/* ------------------------- BODY ------------------------- */
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* ------------------------- HEADER ------------------------- */
+
+header{
+    display: flex;
+    width: 100vw;
+}
+
+#contenedorCabecera{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 60% 15% 25%;
+}
+
+    /* MENU DE NAVEGACIÓN */
+
+#contenedorNav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+nav{
+    display: grid;
+    /*grid-template-columns: repeat(4, minmax(100px, 25%));*/
+    grid-template-columns: repeat(4, 25%);
+    width: 100%;
+    margin-right: 5vw;
+    font-family: "Fredoka";
+    font-size: 1.7vw;
+    letter-spacing: 2px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+nav a:hover{
+    color: rgb(112, 112, 112);
+}
+
+#menuHamburguesa{
+    display: none;
+}
+
+    /* FOTO DE CABECERA*/
+
+#contenedorFoto{
+    width: 100%;
+    text-align: right;
+}
+
+#fotoAntonio{
+    width: 100%;
+    margin: 0px auto;
+    vertical-align: bottom;
+}
+
+    /* LOGO DE CABECERA */
+
+#contenedorLogo2{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#logo2{
+    width: 95%;
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+/* ESTILOS DEL CONTENIDO DE TEXTO*/
+
+#tituloPaginaResponsive{
+    font-family: "Fredoka";
+    display: none;
+    background-color: white;
+    color: rgb(112, 112, 112);
+    text-align: center;
+    border-bottom: 1px solid rgb(112, 112, 112);
+    padding: 5px 0;
+    letter-spacing: 5px;
+    font-size: 1.3vw;
+}
+
+.tituloSeccionPortfolio{
+    background-color: white;
+    color: rgb(112, 112, 112);
+    text-align: center;
+    border-bottom: 1px solid rgb(112, 112, 112);
+    padding: 5px 0;
+    letter-spacing: 5px;
+    font-size: 1.3vw;
+    font-family: "Fredoka";
+}
+
+.vacia{
+    height: 5vh;
+}
+
+.cajaTexto{
+    width: 90vw;
+    margin: auto;
+}
+
+.texto{
+    font-family: "Montserrat";
+    margin: auto 25px;
+}
+
+.texto h1{
+    font-size: 3vw
+}
+
+.texto h2{
+    font-size: 1.8vw
+}
+
+.texto p{
+    font-size: 1.7vw;
+}
+
+.texto ul{
+    font-size: 1.5vw;
+    margin-left: 25px;
+    line-height: 35px;
+}
+
+.texto a{
+    text-decoration: none;
+    color: black;
+}
+
+.texto a:hover{
+    color: rgb(112, 112, 112);
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.cursiva{
+    font-style: italic;
+}
+
+/* ------------------------- FOOTER ------------------------- */
+
+footer{
+    width: 100vw;
+    background-color: black;
+    text-align: center; 
+    font-family: "Montserrat";
+    font-size: 2vw;
+}
+
+.copy{
+    display: inline-block;
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#contenedorPrivacidad{
+    font-family: "Montserrat";
+}
+
+#contenedorPrivacidad h1{
+    font-weight: 700;
+    font-size: 3vw;
+}
+
+#contenedorPrivacidad h2{
+    font-weight: 400;
+    font-size: 1.8;
+}
+
+.enlacePrivacidad{
+    font-size: 0.7em;
+    color: rgb(219, 206, 206);
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 15px;
+    margin-bottom: 0px;
+    text-decoration: none;
+}
+
+.enlacePrivacidad:hover{
+    color: white;
+}
+
+/*BOTÓN VOLVER ARRIBA*/
+  
+#back2Top {
+    width: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    z-index: 10;
+    display: none;
+    cursor: pointer;    
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    color: #555;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+    right: 0.938rem;	
+    bottom: 20px;
+    border-radius: 15px;
+    background-color: rgba(182, 182, 182, 0.719);
+    color:#22303A; 
+    width: 45px;
+    line-height: 45px;
+    /*opacity: 0.75;*/
+}
+
+#back2Top:hover {
+    background-color: rgba(182, 182, 182, 0.993);
+}
+
+#back2Top img{
+    vertical-align: top;
+    width: 100%;
+}
+
+/* ---------- ESTILOS DEL MENU DE NAVEGACIÓN HAMBURGUESA ---------- */
+
+#veloMenu {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.966);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#iconoBurguer{
+    vertical-align: top;
+    width: 25%;
+}
+
+#cerrarNav{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 7vw;
+    border-radius: 25%;
+}
+
+#cerrarNav:hover{
+    box-shadow: 0px 0px 10px white;
+}
+
+#cajaMenuResponsive{
+    margin-top: 100px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cajaMenuResponsive a{
+    text-decoration: none;
+    color: white;
+    font-family: "Fredoka";
+    font-size: 5vw;
+    margin-top: 20px;
+}
+
+#cajaMenuResponsive hr{
+    height: 2px;
+    width: 20%;
+    background-color: white;
+    margin:30px auto;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+        
+@media only screen and (max-width:960px){
+
+    #contenedorCabecera{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        grid-template-columns: 40% 25% 35%;
+        background-color: burlywood;
+    }
+
+    nav{
+        display: none;
+    }
+
+    #contenedorNav{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+	#cajaMenuResponsive{
+        margin-top: 200px;
+    }
+  
+    #menuHamburguesa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Fredoka";
+        font-size: 5vw;
+        user-select: none;
+        cursor: pointer;
+    }
+    
+    #cerrarNav{
+        width: 6vw;
+        top: 100px;
+        right: 40px
+    }
+
+    #tituloPaginaResponsive{
+        display: block;
+        color: black;
+        background-color: burlywood;
+        padding: 15px 0 15px 0;
+        font-size: 3vw;
+        border-top: 1px solid rgb(236, 196, 143);
+    }
+
+    .tituloSeccionPortfolio{
+        color: black;
+        background-color: burlywood;
+        padding: 15px 0 15px 0;
+        font-size: 3vw;
+        border-top: 1px solid rgb(236, 196, 143);
+    }
+
+    #contenedorPrivacidad h1{
+        font-weight: 700;
+        font-size: 5.3vw;
+    }
+
+    footer{
+        font-size: 2.7vw;
+    }
+
+        /* SECCIÓN DE TEXTO */
+
+    .texto{
+        margin: auto 30px;
+    }
+    
+    .texto h1{
+        font-size: 4.5vw
+    }
+    
+    .texto h2{
+        font-size: 3.5vw
+    }
+    
+    .texto p{
+        font-size: 2.3vw;
+    }
+    
+    .texto ul{
+        font-size: 2.1vw;
+        margin-left: 0px;
+        line-height: 35px;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 576PX * * */
+
+@media only screen and (max-width:576px){
+    
+    #contenedorPrivacidad h2{
+        font-size: 1.1em;
+    }
+
+    footer{
+        padding-top: 15px;
+    }
+
+    .enlacePrivacidad{
+        font-size: 0.9em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 550PX * * */
+    
+@media only screen and (max-width:550px){
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 3.5vw;
+        /*padding: 7px 0px;*/
+    }
+
+    .copy{
+        margin: 2px 0px;
+        padding: 0px;
+    }
+
+    #punto{
+        display: none;
+    }
+
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+    
+@media only screen and (max-width:360px){
+
+    #contenedorCabecera{
+        padding-top: 10px;
+      	padding-bottom: 10px;
+        grid-template-columns: 40% 25% 35%;
+        background-color: burlywood;
+    }
+
+    #cerrarNav{
+        width: 7vw;
+        top: 60px;
+        right: 40px
+    }
+    
+    #cajaMenuResponsive{
+        margin-top: 100px;
+    }
+
+    #tituloPaginaResponsive{
+        font-size: 5vw;
+    }
+
+    .tituloSeccionPortfolio{
+        font-size: 4vw;
+    }
+
+    .texto{
+        margin: auto 25px;
+    }
+    
+    .texto h1{
+        font-size: 5.5vw
+    }
+    
+    .texto h2{
+        font-size: 4.7vw
+    }
+    
+    .texto p{
+        font-size: 4.5vw;
+        line-height: 25px;
+    }
+    
+    .texto ul{
+        font-size: 4.5vw;
+        margin-left: 0px;
+        line-height: 25px;
+    }
+
+    footer{
+        font-size: 4.5vw;
+    }
+
+    #back2Top {
+        width: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        z-index: 10;
+        display: none;
+        cursor: pointer;    
+        position: fixed;
+        right: 20px;
+        color: #555;
+        text-align: center;
+        font-size: 30px;
+        text-decoration: none;
+        right: 0.938rem;	
+        bottom: 80px;
+        border-radius: 15px;
+        background-color: rgba(182, 182, 182, 0.719);
+        color:#22303A; 
+        width: 45px;
+        line-height: 45px;
+        /*opacity: 0.75;*/
+    }
+}

@@ -1,0 +1,6 @@
+#REDIRECCIONAR A PAGINA DE ERROR 404 PERSONALIZADA
+ErrorDocument 404 /404.html
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

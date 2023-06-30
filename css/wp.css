@@ -1,0 +1,364 @@
+/*body{
+    position: relative;
+}*/
+
+#opcPortfolio{
+    color: rgb(112, 112, 112);
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    font-family: "Fredoka";
+    position: relative;
+}
+
+    /* CONTENEDOR GENERAL DE SECCIONES */
+
+#portfolioWP{
+    padding-top: 15px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+}
+
+    /* SECCION */
+
+.seccionWP{
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+    /* TÍTULO DE SECCIÓN */
+
+.tituloWP{
+    box-sizing: border-box;
+    text-align: center;
+    width: 80%;
+    padding: 10px;
+}
+
+.tituloWP img{
+    vertical-align: top;
+    width: 90%;
+}
+
+    /* IMAGEN DE SECCIÓN */
+
+.galeriaWP{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 20px 15px 20px;
+}
+
+.galeriaWP img{
+    vertical-align: top;
+    width: 100%;
+}
+
+    /* BOTONES DE SECCIÓN */
+
+.contenedorBotonesWP{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumenWP, .webWP{
+    padding: 10px;
+}
+
+.descargarGuia, .verWeb{
+    padding: 5px 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(112, 112, 112);
+    outline: none;
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 3px;
+    letter-spacing: 2px;
+    font-family: "Fredoka";
+}
+
+.descargarGuia:hover, .verWeb:hover{
+    background-color: black;
+}
+
+    /* GALERÍA DE DE FOTOS (HABILITADA CON JS) */
+
+#velo {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgb(44, 32, 32);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#slider{
+    margin-top: 50px;
+}
+
+#galeriaFotosWP{
+    position: absolute;
+    width: 60%;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 5px 30px;
+    background-color: rgb(44, 32, 32);
+    display: none;
+    flex-direction: column;
+    z-index: 15;
+}
+
+#imagenGaleriaFotosWP{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+    /* ESTILOS DE LOS BOTONES DE CONTROL DE LA GALERÍA */
+
+.botoneraGaleria{
+    margin: auto;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.controlGaleria{
+    border-radius: 100%;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.controlGaleria:hover{
+    background-color: lightseagreen;
+}
+
+.iconoGaleria{
+    vertical-align: top;
+    padding: 10px;
+    margin: auto;
+}
+
+    /* ESTILOS DEL BOTÓN CERRAR GALERIA */
+
+#botonCerrarGaleria{
+    position: absolute;
+    top: 10px;
+    right: -8px;
+}
+
+#iconoCerrar{
+    width: 50%;
+    border-radius: 25%;
+}
+
+#iconoCerrar:hover{
+    box-shadow: 0px 0px 10px white;
+}
+
+    /* CONTENEDOR VER WEB (HABILITADO CON JS) */
+    /*Algunos de los selectores CSS ya no tienen uso, pero los he mantenido por motivos didácticos*/
+
+#contenedorVerWeb{
+    position: absolute;
+    width: 60%;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 5px 30px 20px 30px;
+    background-color: rgb(44, 32, 32);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 15;
+    color: white;
+}
+
+.aviso{
+    margin-top: 50px;
+    background-color: red;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.2em;
+}
+
+.aviso p{
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+}
+
+#textoCDMON{
+    font-size: 1.5em;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    user-select: none;
+}
+
+#textoCDMON>p{
+    margin: 0;
+    padding: 0 0 10px 0;
+    text-align: center;
+}
+
+#cajaVerWeb{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;}
+
+#clavesCDMON{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 50%));
+    grid-row-gap: 10px;
+    font-size: 1.3em;
+}
+
+.textoClaves, .claves{
+    text-align: center;
+}
+
+.textoClaves{
+    user-select: none;
+}
+
+#enlaceWeb{
+    width: 50%;
+    margin: 30px auto 20px auto;
+    padding: 5px 20px;
+    background-color: rgb(175, 169, 169);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+#enlaceWeb:hover{
+    background-color: rgb(131, 131, 131);
+}
+
+#enlaceWeb>p{
+    font-size: 1.3em;
+    margin: 3px;
+    padding-top: 5px;
+    user-select: none;
+}
+
+#imagenEnlace{
+    width: 100%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+        
+@media only screen and (max-width:960px){
+
+    #portfolioWP{
+        grid-template-columns: 1fr;
+        grid-row-gap: 50px;
+    }
+
+    .seccionWP{
+        border-bottom: 1px solid rgb(112, 112, 112);
+    }
+
+    .seccionWP:last-of-type{
+        border-bottom: none;
+    }
+
+    .contenedorBotonesWP{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .resumenWP, .webWP{
+        padding: 10px 20px;
+    }
+
+    #galeriaFotosWP{
+        width: 90%;
+        top: 100px;
+    }
+
+    #slider{
+        margin-top: 100px;
+    }
+
+    .botoneraGaleria{
+        margin: 10px auto;
+        justify-content: center;
+        width: 20%;
+    }
+
+    .controlGaleria{
+        margin: 30px 20px;
+    }
+
+}
+
+/* * * RESOLUCIONES INFERIORES A 640PX * * */
+        
+@media only screen and (max-width:640px){
+
+    .contenedorBotonesWP{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .resumenWP, .webWP{
+        padding: 10px 20px;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+        
+@media only screen and (max-width:360px){
+
+    .descargarGuia, .verWeb{
+        font-size: 3vw;
+    }
+
+    #galeriaFotosWP{
+        top: 30px;
+        padding: 5px;
+    }
+
+    .botoneraGaleria{
+        margin: 10px auto;
+        justify-content: center;
+    }
+    
+    .controlGaleria{
+        margin: 0px 10px;
+    }
+}
+

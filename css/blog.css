@@ -1,0 +1,61 @@
+header{
+    border-bottom: 1px solid hsla(256, 100%, 72%, 0.2);
+}
+
+#opcBlog{
+    color: rgb(112, 112, 112);
+}
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    position: relative;
+}
+
+#enObras{
+    text-align: center;
+    width: 100vw;
+    height: 100%;
+}
+
+#enObras img{
+    vertical-align: top;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.espaciador{
+    display: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+    
+@media only screen and (max-width:960px){
+    
+    .espaciador{
+        display: none;
+    }  
+}
+
+/* * * RESOLUCIONES INFERIORES A 600PX * * */
+    
+@media only screen and (max-width:600px){
+    
+    .espaciador{
+        display: inline-block;
+        height: 40vh;
+    }  
+   
+}
+
+/* * * RESOLUCIONES INFERIORES A 360PX * * */
+    
+@media only screen and (max-width:360px){
+    
+}
+
+
+

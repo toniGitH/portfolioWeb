@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí · Antonio González Ariza · Front-End Developer</title>
+    <meta name="description" content="Soy Antonio González Ariza · Front-End Developer · Especializado en Wordpress, también realizo proyectos con HTML5, CSS3 y JS · Posicionamiento en buscadores con técnicas SEO.">
+    <meta name="author" content="Antonio González Ariza - Front-End Developer">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="fontAwesome/css/all.css">
+    <link rel="stylesheet" href="bootstrap5/bootstrap.min.css">
+    <script src="javaScript/nav.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javaScript/volver-arriba.js"></script>
+
+</head>
+<body>
+
+    <header>
+      <div id="contenedorCabecera">
+          <div id="contenedorNav">
+              <nav>
+                  <a href="index.html" id="opcInicio">INICIO</a>
+                  <a href="portfolio.html" id="opcPortfolio">PORTFOLIO</a>
+                  <a href="blog.html" id="opcBlog">BLOG</a>
+                  <a href="about.html" id="opcAbout">SOBRE MÍ</a>  
+              </nav>
+              <div id="menuHamburguesa">
+                  <img id="iconoBurguer" src="img/iconos/burguer.png" alt="Menú principal">
+              </div>
+          </div>
+          <div id="contenedorFoto">
+              <a href="index.html">
+                  <img id="fotoAntonio" src="img/antonio/antonioBit.png" alt="InexpertosWeb logo" draggable="false">
+              </a>
+          </div>
+          <div id="contenedorLogo2">
+              <img id="logo2" src="img/logos/logo2.png" alt="Front-End Developer" draggable="false">
+          </div>
+      </div>
+    </header>
+
+    <main>
+      
+        <div id="veloMenu"></div>
+
+        <div id="tituloPaginaResponsive">SOBRE MÍ</div>
+
+        <section id="saludo">
+            <div id="fotoPersonal"><img src="img/antonio/antonio3.png" alt="Antonio González Ariza"> </div>
+            <div id="hola"><p>¡ HOLA !</p></div>
+        </section>
+
+        <section class="vacia" id="vaciaCabecera"></section>
+        <section class="vacia"></section>
+
+        <section class="cajaTexto">
+            <div class="texto">
+                <P>Soy Antonio González.</P>
+                <p>Tras 20 años en el sector bancario decidí que era el momento de dar un 
+                    cambio de rumbo a mi vida profesional.</p>
+                <p>Apasionado por las tecnologías de la comunicación, hace dos años se cruzó
+                    en mi camino el mundo de las tecnologías web, y desde entonces no he dejado
+                    de aprender y formarme.</p>
+                <p>Me he especializado en Wordpress y en técnicas SEO, aunque también realizo diseños con HTML5, CSS3 y JS.</p>
+                <p>Puedes <span class="negrita"><a id="enlaceCV" href="pdf/CV.pdf" target="_blank" rel="noopener noreferrer">acceder aquí a mi C.V.</a></span></p>
+                <br>
+                <p>Si quieres contactar conmigo, puedes enviarme un email a <span class="negrita">antonio@inexpertosweb.com</span> o utilizar el siguiente formulario de contacto.</p>
+            </div>
+        </section>
+
+        <section class="vacia"></section>
+
+        <div id="cajaFormulario" class="container bg-secondary bg-dark-md py-3 px-5">
+
+          <div class="row my-3">
+            <h2 id="texto-contacta" class="text-center">CONTACTA CONMIGO</h2>
+          </div>
+  
+          <form id="formulario" action="enviar.php" method="post" class="pb-3">
+
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-user bigicon"></i>
+              </span>
+              <input type="text" id="nombre" name="nom" class="form-control" placeholder="Nombre">
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-envelope bigicon"></i>
+              </span>
+              <input type="email" id="email" name="correo" class="form-control" placeholder="Email" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-location-arrow bigicon"></i>
+              </span>
+              <input type="text" id="subject" name="asunto" class="form-control" placeholder="Asunto" required>
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text"><i class="fa fa-pen bigicon"></i>
+              </span>
+              <textarea id="message" name="mensaje" class="form-control"  placeholder="Mensaje" rows="5" required=""></textarea>  
+            </div>
+
+            <div class="form-check mt-4 mt-sm-3">
+              <input type="checkbox" id="privacidad" name="accept" class="form-check-input" value="Privacidad Aceptada" required>
+              <label class="form-check-label" for="privacidad">
+                He leído y acepto tu <a href="privacidad.html" id="enlacePrivacidad">Política de Privacidad</a>.
+              </label>
+
+            <div class="row d-flex justify-content-center mt-5 mt-sm-3">
+              <div class="col-4 d-flex justify-content-center">
+                <button type="submit" id="form-submit" class="btn-outline-dark py-2 px-4 rounded-3">Enviar</button>
+              </div>
+            </div>
+
+            
+          </div>
+  
+          </form>
+  
+        </div>
+
+        <br><br>
+
+        <section class="vacia"></section>
+
+    </main>
+
+    <footer>
+      <p class="copy">&copy; 2021 <span id="punto">·</span> Antonio González Ariza</p>
+      <p class="copy"><span id="punto">·</span></p> 
+      <p class="copy">Todos los derechos reservados</p>
+      <p class="enlacePrivacidad"><a class="enlacePrivacidad" href="privacidad.html">Privacidad</a></p>
+      <div id="back2Top"><img src="img/iconos/arrowUp.png" draggable="false"></div>
+  </footer>
+    
+</body>
+</html>

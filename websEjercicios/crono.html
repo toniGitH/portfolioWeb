@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRONÓMETRO REGRESIVO</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+
+
+    <style type="text/css">
+
+        body{
+            background-color: rgb(11, 197, 11);
+        }
+
+        #titulo{
+            background-color: black;
+            color: white;
+            width: 50%;
+            margin: 100px auto 50px auto;
+            text-align: center;
+            font-size: 4em;
+            padding: 5px;
+            border-radius: 5px;
+        }   
+
+        main{
+            width: 50%;
+            margin: 30px auto;
+            border-radius: 5px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 7fr 1fr;
+            background-color: black;
+        }
+
+        #botonera{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        button{
+            font-size: 1.5em;
+            background-color: green;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        button:hover{
+            background-color: rgb(5, 201, 5);
+        }
+
+        button:focus{
+            background-color: red;
+        }
+
+
+        span{
+            font-size: 15em;
+            user-select: none;
+            color: yellow;  
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload=inicio;
+
+//DEFINICIÓN DE VARIABLES GLOBALES
+
+        var posicionSeg=0;
+        var posicionMin=0;
+        var atras;
+        var enFuncionamiento=false;
+        
+
+//FUNCIÓN DE INICIO
+
+        function inicio(){
+            document.querySelector("#segundos").onclick=cambioSeg;
+            document.querySelector("#minutos").onclick=cambioMin;
+            document.querySelector("#start").onclick=start;
+            document.querySelector("#pause").onclick=pause;
+            document.querySelector("#reset").onclick=reset;
+
+        }
+
+//FUNCIÓN PARA INICIAR LA CUENTA ATRÁS
+
+        function start(){
+            if(enFuncionamiento==false){
+                atras=setInterval(contarAtras, 1000);
+                enFuncionamiento=true;
+            }       
+        }
+             
+//FUNCIÓN PARA PAUSAR LA CUENTA ATRÁS
+
+        function pause(){
+            if(enFuncionamiento==true){
+                clearInterval(atras);
+                enFuncionamiento=false;
+            }    
+        }
+
+//FUNCIÓN PARA RESETEAR LA CUENTA ATRÁS
+
+        function reset(){
+            clearInterval(atras);
+            posicionSeg=0;
+            posicionMin=0;
+            enFuncionamiento=false;
+            document.querySelector("#segundos").innerHTML=`0${posicionSeg}`;
+            document.querySelector("#minutos").innerHTML=`0${posicionMin}`;
+            document.querySelector("audio").pause();
+        }
+
+//FUNCIÓN CUENTA ATRAS
+
+        function contarAtras(){
+            
+            posicionSeg--
+
+            if (posicionMin<=0 && posicionSeg<0){
+                    clearInterval(atras);
+                    document.querySelector("audio").play();
+            }
+                
+            else if(posicionSeg<0){
+
+                posicionMin--
+                posicionSeg=59;
+                document.querySelector("#segundos").innerHTML=posicionSeg;
+
+                    if (posicionMin<10){
+                        document.querySelector("#minutos").innerHTML=`0${posicionMin}`;
+                    }
+                            
+                    else{ 
+                        document.querySelector("#minutos").innerHTML=posicionMin;  
+                    }
+            }
+                    
+            else if(posicionSeg<10){
+                document.querySelector("#segundos").innerHTML=`0${posicionSeg}`;
+            }        
+    
+                else{
+                    document.querySelector("#segundos").innerHTML=posicionSeg;
+                }
+        }
+
+//FUNCIÓN PARA SUBIR Y BAJAR SEGUNDOS
+
+        function cambioSeg(s){
+
+            var alto=document.querySelector("#segundos").offsetHeight;
+            var y=document.querySelector("#segundos").offsetTop;
+            var limite=(alto/2)+y;
+                    
+            if (s.clientY<limite){
+
+                posicionSeg++;
+
+                if(posicionSeg<10){
+                    document.querySelector("#segundos").innerHTML=`0${posicionSeg}`;
+                }
+                    else if(posicionSeg>59){
+                        posicionSeg=0;
+                        document.querySelector("#segundos").innerHTML=`0${posicionSeg}`;
+                    }
+                        else{
+                            document.querySelector("#segundos").innerHTML=posicionSeg;
+                        }  
+            }
+
+            else if(s.clientY>limite){
+
+                posicionSeg--;
+                
+                if(posicionSeg<0){
+                    posicionSeg=59;
+                    document.querySelector("#segundos").innerHTML=posicionSeg;
+                }
+
+                else if(posicionSeg<10){
+                    document.querySelector("#segundos").innerHTML=`0${posicionSeg}`;
+                }
+
+                    else if(posicionSeg<59){
+                        document.querySelector("#segundos").innerHTML=posicionSeg;
+                    }
+            }
+          
+        }
+
+//FUNCIÓN PARA SUBIR Y BAJAR MINUTOS
+
+        function cambioMin(m){
+
+            var alto=document.querySelector("#minutos").offsetHeight;
+            var y=document.querySelector("#minutos").offsetTop;
+            var limite=(alto/2)+y;
+
+        
+            if (m.clientY<limite){
+
+                posicionMin++;
+
+                if(posicionMin<10){
+                    document.querySelector("#minutos").innerHTML=`0${posicionMin}`;
+                }
+                    else if(posicionMin>59){
+                        posicionMin=0;
+                        document.querySelector("#minutos").innerHTML=`0${posicionMin}`;
+                    }
+                        else{
+                            document.querySelector("#minutos").innerHTML=posicionMin;
+                        }  
+            }
+
+            else if(m.clientY>limite){
+
+                posicionMin--;
+                
+                if(posicionMin<0){
+                    posicionMin=59;
+                    document.querySelector("#minutos").innerHTML=posicionMin;
+                }
+
+                else if(posicionMin<10){
+                    document.querySelector("#minutos").innerHTML=`0${posicionMin}`;
+                }
+
+                    else if(posicionMin<59){
+                        document.querySelector("#minutos").innerHTML=posicionMin;
+                    }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="titulo">CUENTA REGRESIVA</div>
+
+    <main>
+        <div id="pantalla">
+            <span id="minutos">00</span><span>:</span><span id="segundos">00</span>
+        </div>
+    
+        <div id="botonera">
+            <button id="start">START</button>
+            <button id="pause">PAUSE</button>
+            <button id="reset">RESET</button>
+        </div>
+
+        <audio src="sonidos/grillos.mp3"></audio>
+    </main>
+
+</body>
+
+</html>

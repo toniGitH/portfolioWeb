@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIC CALCULATOR</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+
+    <style>
+        
+        @font-face {
+            font-family: computer;
+            src: url(fuentes/PressStart2P-Regular.ttf);
+        }
+
+        *{
+            font-family: computer;
+            
+        }
+
+        #aviso{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0; 
+        }
+
+        #error{
+            margin: auto;
+            width: 50%;
+            background-color: red;
+            z-index: 5;
+            color: white;
+            font-size: 4em;
+            text-align: center;
+            padding: 100px;
+        }
+
+        main{
+            position: relative;
+            background-color: black;
+            margin: 30px auto;
+            width: 60%;
+            padding: 2px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        #titulo{
+            margin: 10px auto 40px 10px;
+            font-size: 1.6em;
+            color: white;    
+        }
+
+        #logozx{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        section{
+            margin: auto;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;   
+        }
+
+        #caja_principal{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            grid-template-rows: auto;
+            grid-row-gap: 30px;
+            padding: 30px;
+            color: white;
+            font-size: 1.3em;
+        }
+
+        #operaciones{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .simbolo{
+            background-color: grey; 
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 0.7em;
+        }
+
+        input[type="number"]{
+            width: 70px;
+            height: 30px;
+            font-size: 1.1em;
+        }
+
+        #calculo{
+            width: 50px;
+            height: 50px;
+        }
+
+        #resultado_final{
+            margin: 20px auto;
+            width: 30%;
+            background-color: salmon;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 50px;
+            font-size: 1.3em;  
+        }
+
+    </style>
+
+    <script type="text/javascript">
+
+        window.onload=inicio;
+        
+        var dato1;
+        var dato2;
+        var suma;
+        var resta;
+        var producto;
+        var cociente;
+
+        function inicio(){
+           document.querySelector("#suma").onclick=botonsumar;
+           document.querySelector("#resta").onclick=botonrestar;
+           document.querySelector("#multiplicacion").onclick=botonmultiplicar;
+           document.querySelector("#division").onclick=botondividir;
+        }
+
+        function botonsumar(){
+            dato1=Number(document.querySelector("#primero").value); /*LEER DATO DE INPUT "primero" Y METERLO EN LA VARIABLE DATO1*/
+            dato2=Number(document.querySelector("#segundo").value); /*LEER DATO DE INPUT "segundo" Y METERLO EN LA VARIABLE DATO2*/
+            (dato1!="" && dato2!="")    ? sumar()
+                                        : error();
+        }
+
+        function sumar(){
+            suma=dato1+dato2; /*Si se pone var suma, entonces el dato sólo será accesible desde dentro de la función*/
+            document.querySelector("#calculo").value=suma;                             
+        } 
+
+
+        function botonrestar(){
+           dato1=Number(document.querySelector("#primero").value); /*LEER DATO DE INPUT "primero" Y METERLO EN LA VARIABLE DATO1*/
+           dato2=Number(document.querySelector("#segundo").value); /*LEER DATO DE INPUT "segundo" Y METERLO EN LA VARIABLE DATO2*/
+           (dato1!="" && dato2!="")     ? restar()
+                                        : error();
+       }
+
+       function restar(){
+            resta=dato1-dato2;
+            document.querySelector("#calculo").value=resta;                             
+        }
+
+
+       function botonmultiplicar(){
+           dato1=Number(document.querySelector("#primero").value); /*LEER DATO DE INPUT "primero" Y METERLO EN LA VARIABLE DATO1*/
+           dato2=Number(document.querySelector("#segundo").value); /*LEER DATO DE INPUT "segundo" Y METERLO EN LA VARIABLE DATO2*/
+           (dato1!="" && dato2!="")     ? multiplicar()
+                                        : error();
+       }
+
+       function multiplicar(){
+            producto=dato1*dato2;
+            document.querySelector("#calculo").value=producto;                             
+        }
+
+       function botondividir(){
+           dato1=Number(document.querySelector("#primero").value); /*LEER DATO DE INPUT "primero" Y METERLO EN LA VARIABLE DATO1*/
+           dato2=Number(document.querySelector("#segundo").value); /*LEER DATO DE INPUT "segundo" Y METERLO EN LA VARIABLE DATO2*/
+           (dato1!="" && dato2!="")     ? dividir()
+                                        : error();
+       }
+
+       function dividir(){
+            cociente=dato1/dato2;
+            document.querySelector("#calculo").value=cociente;                             
+        }
+
+       function error(){
+            document.querySelector("body").innerHTML=`<div id="aviso"></div>`;
+            document.querySelector("#aviso").innerHTML=`<div id="error">HA OCURRIDO UN ERROR</div>`;
+        }
+
+  </script>
+
+</head>
+<body>
+
+    <main>
+        <div id="titulo">ZX CALCULECTRUM</div>
+        <div id="logozx"><img src="img/logozx3.png"></div>
+
+        <section>
+            <div id=caja_principal>
+
+                <label for="primero">Primer número:</label>
+
+                <input type="number" id="primero">
+
+                <label for="segundo">Segundo número:</label>
+
+                <input type="number" id="segundo">
+
+                <div>Elige operación:</div>
+
+                <div id="operaciones">
+                    <button class="simbolo" id="suma">+</button>
+                    <button class="simbolo" id="resta">-</button>
+                    <button class="simbolo" id="multiplicacion">x</button>
+                    <button class="simbolo" id="division">/</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<div id="resultado_final">
+    <div>Resultado:</div>
+    <input id="calculo" readonly>
+</div>
+
+
+    
+</body>
+</html>

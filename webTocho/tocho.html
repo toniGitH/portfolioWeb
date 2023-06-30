@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL TOCHO CHIC - DISPLAY GRID</title>
+    <meta name="description" content="Maqueta de web creada con display GRID. Diseño web responsive. Antonio González Ariza">
+    <meta name="author" content="Antonio González Ariza - Front-End Developer">
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <style>
+
+    /*AJUSTES GENERALES*/
+
+        body{
+            margin: 0px auto;
+            background-color: #F5F5DC;
+            width: 100%;
+            max-width: 1300px;
+        }
+
+        img{
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+    /*AJUSTES DEL HEADER*/ 
+
+        #cabecera{
+            margin: auto;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        
+        #titulo{
+            color: white;
+            background-color: rgba(0, 0, 0, 0.432);
+            font-size: 3.5em;
+            width: 40%;
+            min-width: 480px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            position: absolute;
+            margin: auto;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+
+    /*AJUSTES DEL MAIN*/ 
+
+        main{
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: auto;
+            grid-column-gap: 5px;
+        }
+
+        section{
+            background-color: #F5F5DC;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
+            grid-gap: 4.5px;
+        }
+        
+        aside{
+            margin-left: 4px;
+        }
+    
+    /*AJUSTES DE LA SECTION*/
+
+        .cajasection{
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bandaroja{
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            font-weight: 900;
+            background-color: red;
+            text-align: center;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 25px;
+            left: -40px;
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .titulosection{
+            color: white;
+            background-color: black;
+            text-align: center;
+            font-size: 1em;
+            font-weight: 600;
+            font-family: 'Trebuchet MS';
+            height: 40px;
+            line-height: 40px;
+            margin-top: 0px;
+        }
+
+        .descripcionsection{
+            font-family: 'Quattrocento Sans', sans-serif;
+            font-weight: 400;
+            padding: 10px;
+        }
+
+    /*AJUSTES DEL ASIDE*/
+
+    .encabezado{
+            font-size: 2em;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-size: 1em;
+            font-weight: 600;
+            font-family: 'Trebuchet MS';
+            padding: 25px 0px;
+        }
+
+        .extras{
+            position: relative;
+            background-size: cover;
+            width: 100%;
+            margin-top: 5px;
+            height: calc(33.3% - 34px);
+        }
+
+        .extrasTexto{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            width: 100%;
+            height: 39px;
+            line-height: 39px;
+            background-color: rgba(0, 0, 0, 0.63);
+            color: white;
+            font-size: 1em;
+            font-weight: 600;
+            font-family: 'Trebuchet MS';
+        }
+
+        .extra1{
+            background-image: url(img/parkingaside1.jpg);
+        }
+
+        .extra2{
+            background-image: url(img/detalleschicaside2.jpg);
+        }
+
+        .extra3{
+            background-image: url(img/clubsocialaside3.jpg);
+        }
+
+    /* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+    /* * * MEDIAQUERIE PARA EL HEADER (AFECTA SÓLO AL TÍTULO "EL TOCHO CHIC") * * */
+
+        @media only screen and (max-width:510px){
+
+            #titulo{
+                font-size: 12vw;
+                width: 100%;
+                min-width: 0px;
+                bottom: auto;        
+                height: auto;
+                line-height: normal;
+            } 
+        }
+
+    /* * * MEDIAQUERIES PARA EL MAIN (AFECTA AL SECTION Y ASIDE) * * */
+
+        /*RESOLUCIONES INFERIORES A 1000PX - ESTE MEDIAQUERIE NO ES NECESARIO CON EL GRID QUE TENEMOS*/
+        
+        /*RESOLUCIONES INFERIORES A 800PX*/
+
+        @media only screen and (max-width:800px){
+
+            main{
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto; /*DUDA*/
+            }
+
+            section{
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-gap: 0px;
+            
+            }
+
+            .cajasection{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: auto;
+            }
+
+            .tituloydescripcion{
+               grid-column: 1;
+               grid-row: 1;
+            }
+
+            .bandaroja{
+                transform: rotate(45deg);
+                position: absolute;
+                top: 25px;
+                left: auto;
+                right: -40px;
+            }
+
+            aside{
+                margin-top: 5px;
+            }
+
+            .encabezado{
+                margin-top: 4px;
+            }
+            
+            .extras{
+                margin-top: 3px;
+            }
+
+            .extrasTexto{
+                position: relative;
+                height: 60px;
+                line-height: 60px;
+                font-size: 1.2em;
+            }
+        }
+        
+        /*RESOLUCIONES INFERIORES A 550PX*/
+
+        @media only screen and (max-width:550px){
+      
+            .cajasection{
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .tituloydescripcion{
+               grid-column: 1;
+               grid-row: 2;
+            }
+        }
+       
+
+    </style>
+
+</head>
+
+<body>
+
+        <header id="cabecera">
+            <picture>
+                <source media="(max-width: 700px)" srcset="img/salonpequeño.jpg">
+                <source media="(max-width:1200px)" srcset="img/salonmediano.jpg">
+                <img src="img/salongrande.jpg" alt="">
+            </picture>
+            <div id="titulo">EL TOCHO CHIC</div>
+        </header>
+
+        <main>
+
+            <section>
+                
+                <!--*** CAJA 1.1 - PASILLOS ***-->
+                <div class="cajasection">
+                    
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <div class="bandaroja">
+                        NEW
+                        </div>
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/pasillosvenecianos.jpg" alt="pasillos">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Amplios pasillos venecianos
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>La residencia, de estilo veneciano,
+                            dispone de amplios pasillos que disponen de todo lo necesario,
+                            desde una elegante bañera de Felipo II hasta una cuidada decoración
+                            del techo y paredes de estilo neobarraco.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*** CAJA 1.2 - SANITARIAS ***-->
+                <div class="cajasection">
+
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <div class="bandaroja">
+                        50% dto
+                        </div>
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/instalacionessanitarias.jpg" alt="sanitarias">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Modernas instalaciones sanitarias
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>La mansión dispone de las más modernas instalaciones
+                                 sanitarias, incluso un exclusivo quirófano dotado de 
+                                 las más altas prestaciones, donde cualquiera quisiera 
+                                 poder disfrutar en caso de necesidad.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*** CAJA 1.3 - JUEGOS ***-->
+                <div class="cajasection">
+
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <div class="bandaroja">
+                        SIN GTOS
+                        </div>
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/salajuegos.jpg" alt="juegos">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Sala de juegos totalmente equipada
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>Espacioso salón de juego donde disponemos de una esplendorosa
+                                 mesa de billar sin palos, ni bolas ni agujeros, pero donde 
+                                 podrá poner a prueba su gran imaginación para dibujar el 
+                                 resultado mental que desee.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*** CAJA 2.1 - ENTORNO ***-->
+                <div class="cajasection">
+
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <!--<div class="bandaroja"></div>-->
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/entornonatural.jpg" alt="pasillos">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Exclusivo entorno natural
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>La mansión está rodeada de un entorno natural envidiable,
+                                dominado por el verde de la naturaleza y el turquesa de la 
+                                majetuosa mansión veneciana que corona este idílico paraje 
+                                natural repleto de simpáticos topos y ratoncitos.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*** CAJA 2.2 - SALON DE ACTOS ***-->
+                <div class="cajasection">
+
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <div class="bandaroja">
+                        OFERTÓN
+                        </div>
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/salondeactos.jpg" alt="sanitarias">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Gran salón de actos
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>La joya de la corona reside en una enorme sala de reuniones, 
+                                teatro o salón para celebrar actos de las más altas esferas. 
+                                Acústica envidiable por el boquete no natural del techo y dotado 
+                                de todos los cascos de obras reglamentarios.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--*** CAJA 2.3 - DECORACIÓN ***-->
+                <div class="cajasection">
+
+                    <!--*** BLOQUE 1 ***-->
+                    <div class="cajaimagensection">
+                        <!--*** PRIMERA PARTE: BANDA ROJA ***-->
+                        <div class="bandaroja">
+                        NEW
+                        </div>
+                        <!--*** SEGUNDA PARTE: IMAGEN ***-->
+                        <div class="imagensection">
+                            <img  src="img/decoracionveneciana.jpg" alt="juegos">
+                        </div>
+                    </div>
+
+                    <!--*** BLOQUE 2 ***-->
+                    <div class="tituloydescripcion">
+                        <!--*** TERCERA PARTE: TÍTULO ***-->
+                        <div class="titulosection">
+                            Decoración veneciana original
+                        </div>
+                        <!--*** CUARTA PARTE: DESCRIPCIÓN ***-->
+                        <div class="descripcionsection">
+                            <span>Todos los pasillos y salas de la mansión están lujosamente 
+                                decorados y obsequiados con detalles venecianos originales de 
+                                Giovanni Bordiga de 1926 inspirados en el <span style="color: rgb(92, 88, 88) "> Palacio gótico de 
+                                Ca'Foscari</span> de 1868 de Venecia.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <aside>
+                <div class="encabezado">OTROS EXTRAS</div>
+
+                    <div class="extras extra1">
+                        <div class="extrasTexto">
+                            Amplio parking
+                        </div>
+                    </div>
+
+                    <div class="extras extra2">
+                        <div class="extrasTexto">
+                           Detalles 100% chic
+                        </div>
+                    </div>
+
+                    <div class="extras extra3">
+                        <div class="extrasTexto">
+                            Club social muy activo
+                        </div>
+                    </div>
+            </aside>
+
+        </main>
+
+</body>
+</html>

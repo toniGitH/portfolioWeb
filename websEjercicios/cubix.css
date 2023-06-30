@@ -1,0 +1,175 @@
+        @font-face{
+            font-family: "Roboto";
+            src: url(fuentes/Roboto-Thin.ttf);
+        }   
+        
+        body{
+            margin: 0px;
+            padding: 0px;
+            background: gray;
+            font-family: "Roboto"; 
+        }
+
+    /*Aquí empiezan los estilos de la cabecera (header) de la página*/
+
+         header{
+            background: orangered;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+                   
+        }
+        
+        #cabecera{
+            margin-top: 5px;
+            margin-bottom: 2px;
+            padding: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            background: lightsalmon;
+        }
+
+        #logo{
+            margin-left: 15px;
+            width: 60px;
+            height: 60px;
+        }
+        
+        #titulo{
+            margin: 5px 0px 5px 20px;
+            padding: 0px;
+            font-size: 50px;
+        }
+            
+    /*Aquí acaban los estilos de la cabecera (header) de la página*/
+
+    /*Aquí empiezan los estilos del menú de navegación (nav)*/
+
+        nav{
+            margin: 0px;
+            padding: 5px;
+        }
+
+        nav a{
+            margin: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;  
+            text-decoration: none;
+        }
+
+        #menu a:hover{
+         
+            border-bottom: 5px solid white;
+        }
+
+    /*Aquí acaban los estilos del menú de navegación (nav)*/
+
+    /*Aquí empiezan los estilos del div surface*/
+
+        #surface{
+            margin-top: 15px;
+            height: 250px;
+            background-image: url(imagenes/surface.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #surface h2{
+            border: 3px solid black;
+            width: 160px;
+            height: 30px;
+            margin: 10px;
+            padding: 5px;
+            border: 3px solid blue;
+        }
+
+/*Aquí acaban los estilos del div id=surface*/
+
+/*Aquí empiezan los estilos del div id=tienda*/
+
+        #tienda{
+            display: flex;
+            justify-content: start;
+            margin: 20px;
+        }
+
+        article.producto{
+            background: white;
+            margin: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: thin solid black;
+        }
+
+        #tienda .producto .hardware{
+            width: 150px;
+            height: 120px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #tienda .producto .carro{
+            width: 50px;
+            height: 50px;
+        }
+
+/*Aquí acaban los estilos del div id=tienda*/
+
+/*Aquí empiezan los estilos de social media*/
+
+        #socialmedia{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #socialmedia .social{
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+
+/*Aquí acaban los estilos de social media*/
+
+/*Aquí empiezan los estilos del footer*/
+
+#footer{
+    margin: 25px auto;
+    background: lightgray;
+    display: flex;
+    justify-content: space-around;
+}
+
+#footer section{
+    padding: 10px;
+}
+
+#footer article{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 10px auto;
+}
+
+#footer p{
+    color: rgb(85, 79, 79);
+    font-weight: bold;
+}
+
+#footer a{
+    text-decoration: none;
+    color: rgb(85, 79, 79);
+}
+
+#footer a:hover{
+    color:black;
+}
+
+/*Aquí acaban los estilos del footer*/

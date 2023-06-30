@@ -1,0 +1,149 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(fuentes/Ubuntu-Regular.ttf);
+}/*Esta fuente no está previsto utilizarla, pero está importada por si decido cambiarla*/
+
+@font-face {
+    font-family: computer;
+    src: url(fuentes/PressStart2P-Regular.ttf);
+}
+
+*{
+    font-family: computer;
+    font-size: 0.97em;
+}
+
+body{
+    background-image: url(imagenes/spectrum.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* * * * ESTILOS DE LA CAJA CONTENEDORA PRINCIPAL* * * */
+
+#formulario{
+    margin-top: 70px;
+}
+
+#contenedorformulario{
+    position: relative;
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+/* * * * ESTILOS DEL TÍTULO Y LOGOTIPO * * * */
+
+#logozx{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#tituloform{
+    text-align: center;
+    padding: 10px 0px;
+    color: white;
+}
+
+/* * * * ESTILOS DE LA CAJA CONTENEDORA DEL FORMULARIO * * * */
+
+#cajaform{
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: 150px 480px;
+    grid-template-rows: auto;
+    grid-row-gap: 15px;
+    grid-column-gap: 10px;
+}
+
+/* * * * ESTILOS DE LOS LABEL (columna izquierda del grid) * * * */
+
+.etiqueta{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+/* * * * ESTILOS DE LOS INPUTS (columna derecha del grid) * * * */
+
+input[type="text"],input[type="password"],input[type="email"] {
+    outline: none;
+    border:none;
+    outline:none;
+    width:99%;
+    height: 24px;
+    color: black;
+    
+}
+
+textarea{
+    resize: none;
+    width: 99.9%;
+    border:1px solid black;
+    padding:5px;
+    box-sizing:border-box;
+    border-radius:4px;
+    font-size: 0.85em;
+}
+
+.input{
+    font-size: 0.8em;
+    padding:3px;
+    border-radius:4px;
+    background-color: white;
+}
+
+.input2{
+    font-size: 0.8em;
+    color: white;
+}
+
+/* * * * ESTILOS ESPECÍFICOS PARA EL CAMPO DE CONTRASEÑA * * * */
+
+.ojos{
+    display: flex;
+    background-color: white;
+}
+
+#ojo{
+    line-height: 22px;
+}
+
+#ojo img{
+    height: 18px;
+    margin-right: 4px;
+    padding-top: 3px;
+}
+
+.ojos input{
+    margin-right:10px;    
+}
+
+/* * * * ESTILOS DEL PLACEHOLDER * * * */
+
+::placeholder{
+    font-size: 0.85em;
+    color: gray;
+}
+
+/* * * * ESTILOS DEL BOTÓN DE ENVIAR * * * */
+
+.enviar{
+    display: flex;
+    justify-content: center;
+    margin: 25px auto 5px auto;
+}
+
+input[type=submit]{
+    padding: 5px 10px;
+    border-radius: 5px;
+ }
+
+input[type=submit]:hover{
+    background-color: red;
+    color: white;
+}
+

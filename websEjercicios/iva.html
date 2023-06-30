@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA DE IVA</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="iva.js"></script>
+    <style>
+
+/*ESTILOS GENERALES*/
+
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body{
+            background-color: rgb(75, 75, 75);
+        }
+
+/*ESTILOS DEL CONTENEDOR PRINCIPAL*/
+
+        main{
+            background-color: black;
+            color: white;
+            font-size: 1.3em;
+            width: 50%;
+            margin: 100px auto;
+            padding: 25px 40px;
+        }
+
+/*ESTILOS DEL TÍTULO PRINCIPAL*/
+
+        #titulo{
+            background-color: orangered;
+            color: white;
+            font-size: 2em;
+            width: 80%;
+            margin: 5px auto 40px auto;
+            text-align: center;
+            padding: 15px;
+        }
+
+/*ESTILOS DEL CONTENEDOR DE LA CALCULADORA (DATOS + IVA ACTUAL + RESULTADOS (historial y sumas)*/
+
+        #contenedordatos{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+    /*Estilos del input donde se introduce el precio inicial*/
+
+        input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button { 
+	  		-webkit-appearance: none; 
+	  		margin: 0; 
+		}
+
+		input[type=number] { -moz-appearance:textfield; }
+		
+        input{
+			border-radius:5px;
+			outline:none;
+			border:3px solid #f60;
+			font-size:1em;
+			color: black;
+			font-weight:bold;
+			text-align:right;
+			width:90px;
+            box-sizing: border-box;
+            height: 41px;
+		}
+
+		::placeholder{
+			font-weight:normal;
+			color: black;
+			font-size:1em;
+            padding-right: 2px;
+        }
+
+    /*Estilos del botón de CALCULAR IVA*/
+
+        #calcular{
+			border-radius:3px;
+			background-color:orangered;
+			font-size:0.9em;
+			border:none;
+			padding:2px 11px;
+            height: 41px;
+            color: white;
+		}
+		#calcular:hover{
+			background-color: green;
+			cursor:pointer;
+			color: white;
+		}
+
+    /*Estilos del contenedor del IVA actual*/
+
+        #iva_actual{
+            background-color: lightgray;
+            height: 50px;
+            margin-bottom: 40px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            border-radius: 5px;
+        }
+
+    /*Estilos del contenedor de resultados (historial + sumas)*/
+
+        #contenedorresultados{
+            color: white;
+            display: grid;
+            grid-template-columns: 4fr 2fr;
+            grid-template-rows: auto;
+            grid-column-gap: 10px;
+            border-radius: 5px;
+        }
+
+        #contenedortitulos{
+            color: white;
+            display: grid;
+            grid-template-columns: 4fr 2fr;
+            grid-template-rows: auto;
+            grid-column-gap: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tituloresultados{
+            margin: 2px;
+            text-align: center;
+        }
+
+        #contenedorhistorial, #contenedorsumas{
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        #sumatotal{
+            text-align: center;
+            align-items: flex-start;
+            
+        }
+
+        #total{
+            background-color: yellow;
+            border-radius: 5px;
+            padding: 5px;
+            color: black;
+        }
+        
+        #linea{
+            display: grid;
+            grid-template-columns: 50px 25px 80px 25px 90px 25px 90px;
+            grid-template-rows: auto;
+            margin-left: 20px;
+        }
+
+        #linea div{
+            text-align: right;
+            font-size: 0.8em;
+            margin: 0px;
+            padding: 0px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main>
+
+        <div id="titulo">CALCULADORA DE IVA</div>
+
+        <div id="contenedorcalc">
+
+            <div id="contenedordatos">
+
+                <label for="cantidad">Introduce aquí el precio sin IVA:</label>
+
+                <input type="number" id="cantidad" placeholder="Precio" autofocus max="999">
+                
+                <button id="calcular">Calcular IVA</button>
+                
+            </div>
+
+            <div id="iva_actual">Aquí aparecerá el cálculo actual</div>
+
+            <div id="contenedortitulos">
+                <div class="tituloresultados">Historial de cálculos</div>
+                <div class="tituloresultados">Suma total</div>
+            </div>
+
+            <div id="contenedorresultados">
+
+                <div id="contenedorhistorial">
+                    <div id="historial"></div>
+                </div>
+
+                <div id="contenedorsumas">
+                    <div id="sumatotal"></div>
+                </div>
+
+            </div>
+
+    </main>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI LISTA DE...</title>
+    <link rel="shortcut icon" href="../img/favicon/favicon.ico" type="image/x-icon" />
+    <style type="text/css">
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: monospace;
+    }
+
+    body{
+        background-color: darkkhaki;
+    }
+
+    #titulo{
+        width: 50%;
+        margin: 20px auto;
+        text-align: center;
+        color: white;
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+
+    #datos{
+        width: 50%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 3fr 4fr 1fr;
+        grid-column-gap: 20px;
+        height: 30px;
+    }
+
+    #etiqueta{
+        text-align: center;
+        color: white;
+        font-family: monospace;
+        font-size: 1.5em;
+        font-weight: bold;
+        align-self: center;
+    }
+
+    #campo{
+        outline: none;
+        border: 2px solid rgb(122, 119, 69);
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #lista{
+        background-color: rgb(165, 162, 118);
+        width: 30%;
+        margin: 40px auto;
+        border-radius: 5px;
+    }
+
+    .linea{
+        display: flex;
+        justify-content: space-between;
+        margin: 3px 2px;
+        padding: 5px;
+        color: rgb(85, 83, 50);
+        font-family: monospace;
+        font-size: 2em;
+        font-weight: bold;
+
+    }
+
+    </style>
+
+    <script type="text/javascript">
+
+    window.onload=inicio;
+    var elementos=[];
+    var c;
+    
+
+    function inicio(){
+        window.onkeydown=teclado;
+        c=document.querySelector("#campo");
+        document.querySelector("#boton").onclick=añadir;
+    }
+
+    function teclado(e){
+        let codigo_tecla=e.keyCode;
+        if (codigo_tecla==13){
+            añadir();
+		}
+    }
+
+    function añadir(){
+        let item=c.value.toUpperCase().trim();
+        if (elementos.indexOf(item)==-1 && item.length>0){
+            elementos.push(item);    
+            document.querySelector("#lista").insertAdjacentHTML(`beforeend`,`<div attr="${item}"class="linea">${item}<div><img class="eliminar" src="img/papelera20x20.png"></div></div>`);
+            objeto=document.querySelectorAll(".linea").length-1;
+            document.querySelectorAll(".eliminar")[objeto].onclick=borrar;
+        }
+        c.value="";
+        c.focus();
+    }
+
+    function borrar(){
+          let atributo=this.parentNode.parentNode.getAttribute("attr");
+          aQuienMato=elementos.indexOf(atributo);
+          alert(`Has borrado ${atributo} de la lista`);
+          elementos.splice(aQuienMato,1);
+          this.parentNode.parentNode.remove();
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="titulo">Mi lista de ...</div>
+    <div id="datos">
+        <div id="etiqueta">Tengo que añadir:</div>
+        <input id="campo" autofocus spellcheck="false">
+        <button id="boton">AÑADIR</button>
+    </div>
+    <div id="lista"></div>
+    
+</body>
+</html>
+
+

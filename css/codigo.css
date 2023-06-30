@@ -1,0 +1,571 @@
+#opcPortfolio{
+    color: rgb(112, 112, 112);
+}
+
+/* ------------------------- MAIN ------------------------- */
+
+main{
+    background-image: url("../img/fondos/fondoCodeOscuro95.jpg");
+    background-size: contain;
+    width: 100vw;
+    font-family: "Fredoka";
+    position: relative;
+}
+
+/* AJUSTES GLOBALES DE LA SECCION */
+
+.contenedorTituloSeccion{
+    width: 100%;
+    text-align: center;
+    margin: auto auto 30px auto;
+}
+
+.tituloSeccion{
+    width: 100%;
+    font-size: 1.8vw;
+    color: black;
+}
+
+/*********** SECCIÓN EN CONSTRUCCION ***********/
+
+#seccionEnConstruccion{
+    padding: 30px 0 60px 0;
+    position: relative;
+}
+
+#cajaEnConstruccion{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+.enConstruccion{
+    width: 65%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(182, 182, 182, 0.719);
+    color: white;
+    border-radius: 5px;
+}
+
+.tituloWebEnConstruccion{
+    padding: 5px 0;
+    margin-bottom: 10px;
+    font-size: 1.4vw;
+    color: rgb(112, 112, 112);
+}
+
+.enConstruccion img{
+    vertical-align: top;
+    width: 100%;
+}
+
+.entrarEnConstruccion{
+    margin: 20px auto 10px auto;
+}
+
+.entrarEnConstruccion div{
+    display: inline-block;
+    padding: 5px 20px;
+    color: white;
+    background-color: rgb(112, 112, 112);
+    font-size: 1.1vw;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.entrarEnConstruccion div:hover{
+    background-color: black;
+}
+
+/*********** SECCION WEBS RESPONSIVES ***********/
+
+#seccionResponsives{
+    padding: 40px 0 60px 0;
+    background-color: rgba(182, 182, 182, 0.719);
+    position: relative;
+}
+
+#cajaResponsives{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    width: 75%;
+    margin: auto;
+}
+
+.responsives{
+    width: 75%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: rgb(233, 233, 233);
+    color: white;
+    border-radius: 5px;
+}
+
+.tituloDiseñosResponsives{
+    padding: 5px 0;
+    margin-bottom: 10px;
+    font-size: 1.4vw;
+    color: rgb(112, 112, 112);
+}
+
+.responsives img{
+    vertical-align: top;
+    width: 100%;
+}
+
+.entrarEnResponsive{
+    margin: 20px auto 10px auto;
+}
+
+.entrarEnResponsive div{
+    display: inline-block;
+    padding: 5px 20px;
+    color: white;
+    background-color: rgb(112, 112, 112);
+    font-size: 1.1vw;
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.entrarEnResponsive div:hover{
+    background-color: black;
+}
+
+/*********** SECCION EJERCICIOS SENCILLOS ***********/
+
+#seccionEjercicios{
+    padding: 40px 0 60px 0;
+    position: relative;
+    font-size: 1.6vw;
+}
+
+#cajaEjercicios{
+    width: 95%;
+    margin: auto;
+}
+
+.linea{
+    display: grid;
+    grid-template-columns: 10% 25% 25% 20% 20%;
+    margin: 20px 2px;
+    padding: 15px 0 15px 25px;
+    border-radius: 5px;
+}
+
+.linea:hover{
+    background-color: rgba(182, 182, 182, 0.719);
+}
+
+.numeroEjercicio{
+    align-self: center;
+    color: rgb(112, 112, 112);
+}
+
+.tituloEjercicio{
+    align-self: center;
+    margin-left: 20px;
+    color: black;
+}
+
+.fotoEjercicio{
+    margin: 2px 15px 2px 10px;
+    align-self: center;
+}
+
+.fotoEjercicio img{
+    vertical-align: top;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.iconoEjercicio{
+    align-self: center;
+    color: rgb(112, 112, 112);
+}
+
+.enlaceEjercicio{
+    margin: auto;
+}
+
+.enlaceEjercicio div{
+    display: inline-block;
+    padding: 5px 20px;
+    color: white;
+    background-color: rgb(112, 112, 112);
+    border-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.enlaceEjercicio div:hover{
+    color: black;
+}
+
+#cajaEjercicios hr{
+    background-color: rgb(112, 112, 112);
+    height: 1px;
+    text-align: center;
+    /*width: 90%;*/
+    /*text-align: left;
+    margin-left: 20px;*/
+}
+
+#cajaEjercicios hr:last-child{
+    display: none;
+}
+
+/*********** PRESENTACIÓN EMERGENTE ANTES DE ENTRAR EN LAS WEBS ("VELO") ***********/
+
+    /* VELO */
+
+#velo {
+    z-index: 5;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.856);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* BOTÓN CERRAR VELO */
+
+.botonCerrarVelo{
+    position: absolute;
+    top: 7px;
+    right: -12px;
+}
+
+.iconoCerrar{
+    width: 50%;
+    border-radius: 25%;
+}
+
+.iconoCerrar:hover{
+    box-shadow: 0px 0px 10px white;
+}
+
+    /* CONTENEDOR DEL MENSAJE DENTRO DEL VELO */
+
+#contenedorMensaje{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* AVISO */
+
+.aviso{
+    background-color: red;
+    border-radius: 5px;
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1em;
+}
+
+.aviso p{
+    margin: 0;
+    padding: 2px 0;
+    text-align: center;
+}
+
+    /* CAJA MENSAJE */
+
+.cajaMensaje{
+    padding: 10px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.cajaTituloProyecto{
+    display: flex;
+    justify-content: center;
+    margin: 20px 40px;
+    font-size: 1.2em;
+    color: white;
+    text-shadow: 0 0 5px black;
+    letter-spacing: 2px;
+}
+
+.proyecto{
+    margin-right: 10px;
+}
+
+.nombreProyecto{
+    position: relative;
+}
+
+.caracteristicasProyecto{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: yellow;
+}
+
+.caracteristicasProyecto p{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.columna{
+    text-align: center;
+    margin: 0 20px;
+}
+
+.enlaceWeb{
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+    color: white;
+}
+
+.enlaceWeb p{
+    background-color: black;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.enlaceWeb p:hover{
+    text-shadow: 0 0 3px white;
+}
+
+/* * * * * * * * * * * * * * * * * * * * MEDIAQUERIES * * * * * * * * * * * * * * * * * * * */
+
+/* * * RESOLUCIONES INFERIORES A 960PX * * */
+        
+@media only screen and (max-width:960px){
+
+    .tituloSeccion{
+        width: 100%;
+        font-size: 2.7vw;
+        color: black;
+    }
+
+        /*SECCIÓN EN CONSTRUCCIÓN*/
+
+    .enConstruccion{
+        width: 80%;
+    }
+
+    .tituloWebEnConstruccion{
+        font-size: 1.8vw;
+    }
+
+    .entrarEnConstruccion div{
+        font-size: 1.5vw;
+    }
+
+        /*SECCIÓN RESPONSIVES*/
+
+    #cajaResponsives{
+        width: 85%;
+    }
+
+    .tituloDiseñosResponsives{
+        font-size: 1.8vw;
+    }
+
+    .entrarEnResponsive div{
+        font-size: 1.5vw;
+    }
+
+        /*SECCIÓN EJERCICIOS SENCILLOS*/
+
+    #seccionEjercicios{
+        font-size: 1.9vw;
+    }
+
+    .linea{
+        grid-template-columns: 25% 25% 25% 25%;
+        padding: 15px 0px;
+    }
+
+    .numeroEjercicio{
+        display: none;
+    }
+
+    .tituloEjercicio{
+        font-size: 2.3vw;
+    }
+
+    .iconoEjercicio{
+        justify-self: center;
+        font-size: 1.7vw;
+    }
+
+    .fotoEjercicio{
+        justify-self: center;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 760PX * * */
+        
+@media only screen and (max-width:760px){
+    
+    #cajaEnConstruccion{
+        width: 95%;
+        margin: auto;
+    }
+
+    .enConstruccion{
+        width: 80%;
+    }
+
+    .tituloWebEnConstruccion{
+        font-size: 1.6vw;
+    }
+}
+
+/* * * RESOLUCIONES INFERIORES A 460PX * * */
+        
+@media only screen and (max-width:460px){
+
+    .tituloSeccion{
+        font-size: 4vw;
+    }
+
+        /*SECCIÓN EN CONSTRUCCIÓN*/
+
+    #cajaEnConstruccion{
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+    }
+
+    .enConstruccion{
+        width: 60%;
+        padding: 20px;
+    }
+
+    .tituloWebEnConstruccion{
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 3vw;
+    }
+
+    .entrarEnConstruccion div{
+        font-size: 3vw;
+    }
+
+        /*SECCIÓN RESPONSIVES*/
+    
+    #cajaResponsives{
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        width: 90%;
+    }
+    
+    .responsives{
+        width: 65%;
+        padding: 20px;
+    }
+    
+    .tituloDiseñosResponsives{
+        padding: 0;
+        margin-bottom: 15px;
+        font-size: 3vw;
+    }
+    
+    .entrarEnResponsive div{
+        font-size: 3vw;
+    }
+
+        /*SECCIÓN EJERCICIOS*/
+
+    #seccionEjercicios{
+        font-size: 1.9vw;
+    }
+    
+    .linea{
+        grid-template-columns: 40% 30% 30%;
+    }
+    
+    .numeroEjercicio{
+        display: none;
+    }
+    
+    .tituloEjercicio{
+        font-size: 3.2vw;
+    }
+    
+    .iconoEjercicio{
+        display: none;
+    }
+    
+    .fotoEjercicio{
+        justify-self: center;
+        width: 90%;
+        margin: auto;
+    }
+        
+    .fotoEjercicio img{
+        vertical-align: top;
+        width: 100%;
+        border-radius: 3px;
+    }
+
+        /*VELO*/
+
+    #velo {
+        z-index: 15;
+    }
+
+        /* BOTÓN CERRAR VELO */
+
+    .botonCerrarVelo{
+        top: 20px;
+    }
+
+        /* CONTENEDOR DEL MENSAJE DENTRO DEL VELO */
+
+    #contenedorMensaje{
+        width: 95%;
+    }
+
+        /* AVISO */
+
+    .aviso{
+        width: 70%;
+        font-size: 4vw;
+    }
+
+        /* CAJA MENSAJE */
+
+    .cajaMensaje{
+        width: 95%;
+    }
+
+    .cajaTituloProyecto{
+        font-size: 4vw;
+        margin: 20px 10px;
+    }
+
+    .proyecto{
+        margin-right: 20px;
+        align-self: center;
+    }
+
+    .caracteristicasProyecto{
+        font-size: 3vw;
+    }
+
+    .columna{
+        margin: 0 10px;
+    }
+}
+
